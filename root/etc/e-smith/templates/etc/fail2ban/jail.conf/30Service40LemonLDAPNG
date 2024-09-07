@@ -1,0 +1,23 @@
+{
+
+my $status = ${'lemonldap'}{'status'} || 'disabled';
+my $f2b = ${'lemonldap'}{'Fail2Ban'} || 'enabled';
+return "" if (($status ne 'enabled') || ($f2b ne 'enabled'));
+my @ports = ();
+push @ports, (${'httpd-e-smith'}{'TCPPort'} || '80');
+push @ports, ($modSSL{'TCPPort'} || '443');
+my $port = join (",", @ports);
+
+$OUT .=<<"EOF";
+
+[lemonldap]
+enabled  = true
+filter   = lemonldap-ng
+logpath  = /var/log/messages
+action   = smeserver-iptables[port="$port",protocol=tcp,bantime=$bantime]
+EOF
+
+$OUT .= "           smeserver-sendmail[name=\"LemonLDAP::NG\",dest=$maildest]\n"
+    if ($mail eq 'enabled');
+
+}

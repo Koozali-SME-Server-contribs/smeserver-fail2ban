@@ -1,0 +1,154 @@
+#!/usr/bin/perl -wT
+# vim: ft=xml ts=8 sw=4 noet:
+#----------------------------------------------------------------------
+# heading     : Security
+# description : Fail2Ban
+# navigation  : 5000 5250
+#----------------------------------------------------------------------
+
+use strict;
+use esmith::FormMagick::Panel::fail2ban;
+my $f = esmith::FormMagick::Panel::fail2ban->new();
+$f->display();
+
+__DATA__
+<form title="Fail2Ban" header="/etc/e-smith/web/common/head.tmpl"
+    footer="/etc/e-smith/web/common/foot.tmpl">
+    <page name="First"  post-event="change_whitelist()"
+	pre-event="print_status_message()">
+
+        <subroutine src="show_config_link()"/>
+
+
+	<subroutine src="show_valid_from_list()"/>
+	<field type="text" id="ip" value=""
+	    validation="ip_number_or_blank">
+	    <description>DESC_ADD_IP</description>
+	    <label>ADD_IP</label>
+	</field>
+        <field type="text" id="bits" value=""
+            validation="subnet_mask_bit, validate_network_and_mask">
+            <description>DESC_ADD_BITS</description>
+            <label>ADD_BITS</label>
+        </field>
+
+
+	<subroutine src="print_button('SAVE')" />
+
+	<subroutine src="show_current_deny()"/>
+    </page>
+    <page name="Second"  
+        pre-event="RemoveIP()">
+	<subroutine src="print_status_message()" />
+	<subroutine src="back()" />
+    </page>
+
+
+
+
+    <page name="Config"  
+        post-event="change_settings()" >
+        <subroutine src="print_status_message()" />
+        <field type="select" id="status"
+            options=" 'enabled' => 'ENABLED', 'disabled' => 'DISABLED'"
+            value="get_prop('fail2ban', 'status')">
+            <label>STATUS</label>
+            <description>SERVICE_STATUS</description>
+        </field>
+        <field type="select" id="FilterLocalNetworks"
+            options=" 'enabled' => 'ENABLED', 'disabled' => 'DISABLED'"
+            value="get_prop('fail2ban', 'FilterLocalNetworks')">
+            <label>FilterLocalNetworks</label>
+            <description>FilterLocalNetworks_STATUS</description>
+        </field>
+        <field type="select" id="FilterValidRemoteHosts"
+            options=" 'enabled' => 'ENABLED', 'disabled' => 'DISABLED'"
+            value="get_prop('fail2ban', 'FilterValidRemoteHosts')">
+            <label>FilterValidRemoteHosts</label>
+            <description>FilterValidRemoteHosts_STATUS</description>
+        </field>
+
+        <field type="select" id="Mail"
+            options=" 'enabled' => 'ENABLED', 'disabled' => 'DISABLED'"
+            value="get_prop('fail2ban', 'Mail')">
+            <label>MAIL</label>
+            <description>SEND_MAIL_STATUS</description>
+        </field>
+
+        <field type="text" id="BanTime" value="get_prop('fail2ban', 'BanTime')"
+            validation="">
+            <description>BANTIME</description>
+            <label>DEFAULT_BANTIME</label>
+        </field>
+
+        <field type="text" id="FindTime" value="get_prop('fail2ban', 'FindTime')"
+            validation="">
+            <description>FINDTIME</description>
+            <label>DEFAULT_FINDTIME</label>
+        </field>
+        <field type="text" id="MaxRetry" value="get_prop('fail2ban', 'MaxRetry')"
+            validation="">
+            <description>MAXRETRY</description>
+            <label>DEFAULT_MAXRETRY</label>
+        </field>
+
+        <field type="select" id="sshd"
+            options=" 'enabled' => 'ENABLED', 'disabled' => 'DISABLED'"
+            value="get_prop('sshd', 'Fail2Ban')">
+            <label>SSHD</label>
+            <description>SSHD_STATUS</description>
+        </field>
+        <field type="select" id="qpsmtpd"
+            options=" 'enabled' => 'ENABLED', 'disabled' => 'DISABLED'"
+            value="get_prop('qpsmtpd', 'Fail2Ban')">
+            <label>QPSMTPD</label>
+            <description>QPSMTPD_STATUS</description>
+        </field>        
+        <field type="select" id="dovecot"
+            options=" 'enabled' => 'ENABLED', 'disabled' => 'DISABLED'"
+            value="get_prop('dovecot', 'Fail2Ban')">
+            <label>IMAP</label>
+            <description>IMAP_STATUS</description>
+        </field>
+        <field type="select" id="httpd-e-smith"
+            options=" 'enabled' => 'ENABLED', 'disabled' => 'DISABLED'"
+            value="get_prop('httpd-e-smith', 'Fail2Ban')">
+            <label>HTTPD</label>
+            <description>HTTPD_STATUS</description>
+        </field>
+        <field type="select" id="ftp"
+            options=" 'enabled' => 'ENABLED', 'disabled' => 'DISABLED'"
+            value="get_prop('ftp', 'Fail2Ban')">
+            <label>FTP</label>
+            <description>FTP_STATUS</description>
+        </field>
+        <field type="select" id="lemonldap"
+            options=" 'enabled' => 'ENABLED', 'disabled' => 'DISABLED'"
+            value="get_prop('lemonldap', 'Fail2Ban')">
+            <label>LEMONLDAP</label>
+            <description>LEMONLDAP_STATUS</description>
+        </field>
+        <field type="select" id="ejabberd"
+            options=" 'enabled' => 'ENABLED', 'disabled' => 'DISABLED'"
+            value="get_prop('ejabberd', 'Fail2Ban')">
+            <label>EJABBERD</label>
+            <description>EJABBERD_STATUS</description>
+        </field>
+        <field type="select" id="sogod"
+            options=" 'enabled' => 'ENABLED', 'disabled' => 'DISABLED'"
+            value="get_prop('sogod', 'Fail2Ban')">
+            <label>SOGOD</label>
+            <description>SOGOD_STATUS</description>
+        </field>
+        <field type="select" id="wordpress"
+            options=" 'enabled' => 'ENABLED', 'disabled' => 'DISABLED'"
+            value="get_prop('fail2ban', 'wordpress')">
+            <label>WORDPRESS</label>
+            <description>WORDPRESS_STATUS</description>
+        </field>
+
+        <subroutine src="print_button('SAVE')" />
+
+    </page>
+</form>
+

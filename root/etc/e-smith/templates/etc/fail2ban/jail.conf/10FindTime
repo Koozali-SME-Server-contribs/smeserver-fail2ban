@@ -1,0 +1,7 @@
+{
+
+our $findtime = $fail2ban{'FindTime'} || '900';
+
+$OUT .= "findtime  = $findtime";
+
+}

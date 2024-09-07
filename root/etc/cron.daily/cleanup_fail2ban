@@ -1,0 +1,27 @@
+#!/usr/bin/perl -w
+
+use strict;
+use warnings;
+use esmith::ConfigDB;
+
+my $c = esmith::ConfigDB->open_ro;
+my $f = esmith::ConfigDB->open('fail2ban');
+my $f2b = $c->get('fail2ban');
+
+exit (0) unless ($f2b);
+
+my $bantime = $f2b->prop('BanTime') || '1800';
+my $mod = 0;
+
+foreach my $ban ($f->get_all_by_prop( type => 'ban')){
+    my $ts = $ban->prop('UnbanTimestamp') || time+$bantime;
+    if ( $ts < time ){
+        $ban->delete;
+        $mod = 1;
+    }
+}
+if ($mod == 1){
+  die "An error occured during fail2ban rule update\n"
+    unless (system('/sbin/e-smith/signal-event fail2ban-update') == 0);
+}
+exit (0);

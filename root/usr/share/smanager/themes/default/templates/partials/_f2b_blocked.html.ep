@@ -1,0 +1,47 @@
+<div id="f2b_blocked">
+    <hr class='sectionbar' /><h2>
+    %=l 'f2b_CURRENT_DENY_TITLE'
+    </h2><p>
+    %=l 'f2b_CURRENT_DENY_DESC'
+    </p>
+
+    % my @denys = @{$c->get_current_deny()};
+    % if ($config->{debug} == 1) {
+	<p><%= dumper @denys %></p>
+    % }
+
+    %	if ( @denys ) {
+	<p>
+	<table class="sme-border"><tbody>
+	<tr><th class='sme-border'>
+    	    %=l 'IP_ADDRESS'
+    	    </th><th class='sme-border'>
+    	    %=l 'f2b_JAIL'
+    	    </th><th class='sme-border'>
+    	    %=l 'ACTION'
+    	</th></tr>
+    %    foreach my $sval ( @denys) {
+    %	    my @ssval = split(':',$sval);
+    %	    my $curjail = $ssval[0];
+    %	    $curjail =~ s/^\s//;
+    %	    my @ssvalip = split(' ',$ssval[1]);
+    %	    foreach my $sssval (@ssvalip) {
+    %		my $ip=$sssval;
+    %	        my $action3 = "<a href=\"fail2ban2?action=RemoveIP".
+    %			"&IP=$ip&Jail=$curjail\">".$c->l('REMOVE')."</a>" .
+    %                   " <a href=\"fail2ban2?action=RemoveIP&IP=$ip" .
+    %                   "&Jail=$curjail&Whitelist=true\">".$c->l('WHITELIST')."</a>" ;
+		<tr>
+        	%= t td => (class => 'sme-border') => "$ip"
+    		%= t td => (class => 'sme-border') => "$curjail"
+    		<td class='sme-border'><%= $c->render_to_string(inline => $action3) %></td>
+    		</tr>
+    %	    }
+    %    }
+    	</tbody></table></span></p>
+    %	} else {
+	<b>
+        %=l 'f2b_NO_ENTRIES_YET';
+        </b>
+    %	}
+</div>

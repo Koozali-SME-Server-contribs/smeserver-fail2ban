@@ -1,0 +1,21 @@
+{
+
+my $port = $ftp{'TCPPort'} || '21';
+my $status = $ftp{'status'} || 'disabled';
+my $f2b = $ftp{'Fail2Ban'} || 'enabled';
+return "" if (($status ne 'enabled') || ($f2b ne 'enabled'));
+# add the data channel port
+$port .= ',20';
+$OUT .=<<"EOF";
+
+[ftp]
+enabled  = true
+filter   = proftpd
+logpath  = /var/log/secure
+action   = smeserver-iptables[port="$port",protocol=tcp,bantime=$bantime]
+EOF
+
+$OUT .= "           smeserver-sendmail[name=\"FTP\",dest=$maildest]\n"
+    if ($mail eq 'enabled');
+
+}

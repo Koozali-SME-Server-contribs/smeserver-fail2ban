@@ -1,0 +1,21 @@
+{
+
+my $status = $ejabberd{'status'} || 'disabled';
+my $f2b = $ejabberd{'Fail2Ban'} || 'enabled';
+return "" if (($status ne 'enabled') || ($f2b ne 'enabled'));
+my $port = $ejabberd{'TCPPorts'} || '5222,5223,5269';
+
+$OUT .=<<"EOF";
+
+[ejabberd]
+enabled  = true
+filter   = ejabberd-auth
+logpath  = /var/log/ejabberd.run/current
+action   = smeserver-iptables[port="$port",protocol=tcp,bantime=$bantime]
+EOF
+
+$OUT .= "           smeserver-sendmail[name=\"Ejabberd\",dest=$maildest]\n"
+    if ($mail eq 'enabled');
+
+}
+

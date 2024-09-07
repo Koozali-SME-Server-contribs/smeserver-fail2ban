@@ -1,0 +1,196 @@
+<lexicon lang="bg">
+    <entry>
+	<base>SERVICE_STATUS</base>
+	<trans>Състояние на услугата на Fail2ban.</trans>
+    </entry>
+    <entry>
+	<base>STATUS</base>
+	<trans>Състояние</trans>
+    </entry>
+    <entry>
+        <base>FilterLocalNetworks_STATUS</base>
+        <trans>Сложи в бял списък всички дефинирани локални мрежи.</trans>
+    </entry>
+    <entry>
+        <base>FilterLocalNetworks</base>
+        <trans>Статус на FilterLocalNetworks</trans>
+    </entry>
+    <entry>
+        <base>FilterValidRemoteHosts_STATUS</base>
+        <trans>Поставяне в белия списък на всички оторизирани отдалечени хостове, на които е позволено да достъпват server-manager.</trans>
+    </entry>
+    <entry>
+        <base>FilterValidRemoteHosts</base>
+        <trans>Състояние на FilterValidRemoteHosts</trans>
+    </entry>
+    <entry>
+        <base>BANTIME</base>
+        <trans>Задайте стандартното време забрана за затворите (първоначално стандарта е 1800 секунди).</trans>
+    </entry>
+    <entry>
+        <base>DEFAULT_BANTIME</base>
+        <trans>Време за забрана</trans>
+    </entry>
+    <entry>
+        <base>FINDTIME</base>
+        <trans>>Задайте стандартното време за откриване за затворите първоначално стандарта е 900 секунди).</trans>
+    </entry>
+    <entry>
+        <base>DEFAULT_FINDTIME</base>
+        <trans>Време за откриване</trans>
+    </entry>
+    <entry>
+        <base>MAXRETRY</base>
+        <trans>Задайте стандартния максимален брой опити преди поставяне на забрана (първоначално стандарта е 3).</trans>
+    </entry>
+    <entry>
+        <base>DEFAULT_MAXRETRY</base>
+        <trans>Макс. опити</trans>
+    </entry>
+    <entry>
+        <base>SSHD_STATUS</base>
+        <trans>Състояние на sshd затвор.</trans>
+    </entry>
+    <entry>
+        <base>SSHD</base>
+        <trans>sshd</trans>
+    </entry>
+    <entry>
+        <base>QPSMTPD_STATUS</base>
+        <trans>Състояние на затвора на qpsmtpd (входяща поща).</trans>
+    </entry>
+    <entry>
+        <base>QPSMTPD</base>
+        <trans>qpsmtpd</trans>
+    </entry>
+    <entry>
+        <base>IMAP_STATUS</base>
+        <trans>Състояние на затвора на dovecot (imap услугата за изтегляне на поща).</trans>
+    </entry>
+    <entry>
+        <base>IMAP</base>
+        <trans>dovecot</trans>
+    </entry>
+    <entry>
+        <base>HTTPD_STATUS</base>
+        <trans>Състояние на затвора на httpd. Няколко възможности за включени тук едновремено.</trans>
+    </entry>
+    <entry>
+        <base>HTTPD</base>
+        <trans>httpd</trans>
+    </entry>
+    <entry>
+        <base>FTP_STATUS</base>
+        <trans>Състояние на затвора на proftpd.</trans>
+    </entry>
+    <entry>
+        <base>FTP</base>
+        <trans>proftpd</trans>
+    </entry>
+    <entry>
+        <base>LEMONLDAP_STATUS</base>
+        <trans>Състояние на затвора на LemonLDAP, ако е инсталиран. Нищо не се изпълнява ако LemonLDAP не е инсталиран или е изключен.</trans>
+    </entry>
+    <entry>
+        <base>LEMONLDAP</base>
+        <trans>LemonLDAP</trans>
+    </entry>
+    <entry>
+        <base>EJABBERD_STATUS</base>
+        <trans>Състояние на затвора на ejabberd, ако е инсталиран. Нищо няма да се стартира ако ejabberd не е инсталиран или изключен.</trans>
+    </entry>
+    <entry>
+        <base>EJABBERD</base>
+        <trans>ejabberd</trans>
+    </entry>
+    <entry>
+        <base>SOGOD_STATUS</base>
+        <trans>Състояние на затвора на SOGO, ако е инсталиран. Нищо няма да се стартира ако SOGO не е инсталиран или изключен.</trans>
+    </entry>
+    <entry>
+        <base>SOGOD</base>
+        <trans>SOGO</trans>
+    </entry>
+    <entry>
+        <base>WORDPRESS_STATUS</base>
+        <trans>Статус на затворите на wordpress. Трябва да ги активирате ръчно, ако имате такива в инфо слот или като добавка на сървъра. Също, моля инсталирайте и добавките на всичките му инсталации.</trans>
+    </entry>
+    <entry>
+        <base>WORDPRESS</base>
+        <trans>wordpress</trans>
+    </entry>
+    <entry>
+	<base>VALIDFROM_DESC</base>
+	<trans><![CDATA[ <hr class="sectionbar" /><h2>Позволени хостове</h2> <p>Това е списък от хостове, които няма да бъдат блокирани от fail2ban.</p> ]]></trans>
+    </entry>
+    <entry>
+	<base>NO_ENTRIES_YET</base>
+	<trans>Няма елементи</trans>
+    </entry>
+    <entry>
+	<base>DESC_ADD_IP</base>
+	<trans>За да добавите нова позволена мрежа въведете информацията по-долу.</trans>
+    </entry>
+    <entry>
+        <base>ADD_IP</base>
+        <trans>Оторизирана мрежа</trans>
+    </entry>
+    <entry>
+        <base>DESC_ADD_BITS</base>
+        <trans>За да добавите нова позволена мрежа въведете съответната маска на подмрежа като битове, напр. 22, 25 или 32.</trans>
+    </entry>
+    <entry>
+        <base>ADD_BITS</base>
+        <trans>Оторизирана подмрежа</trans>
+    </entry>
+    <entry>
+	<base>CURRENT_DENY_DESC</base>
+	<trans><![CDATA[ <h2>Блокирани хостове</h2> <p>Това е списък на хостове, които са блокирани в момента. ]]></trans>
+    </entry>
+    <entry>
+	<base>FIRST_SEEN</base>
+	<trans>Хост видян за пръв път</trans>
+    </entry>
+    <entry>
+	<base>SUCCESS</base>
+	<trans>Новите настройки на fail2ban бяха записани.</trans>
+    </entry>
+    <entry>
+	<base>ERR_NO_RECORD</base>
+	<trans>Не мога да открия записът на fail2ban в БД за конфигурация</trans>
+    </entry>
+    <entry>
+	<base>ERROR_STOPPING</base>
+	<trans>Грешка при опит за спиране на услугата</trans>
+    </entry>            
+    <entry>
+        <base>SUCCESS_IP</base>
+        <trans>Беше махната забраната за този IP адрес</trans>
+    </entry>
+    <entry>
+        <base>SUCCESS_IP_WHITE</base>
+        <trans>Беше махната забраната за този IP адрес и бе поставен бели списък</trans>
+    </entry>
+    <entry>
+        <base>ERROR_UPDATING</base>
+        <trans>Не мога да махна забраната</trans>
+    </entry>
+    <entry>
+        <base>ERROR_UPDATING_WHITE</base>
+        <trans>Не мога да махна забраната и да сложа в белия списък</trans>
+    </entry>
+    <entry>
+        <base>ERR_EXISTS</base>
+        <trans>Error: IP already in whitelist</trans>
+    </entry>
+    <entry>
+        <base>SEND_MAIL_STATUS</base>
+        <trans>Send mail on ban</trans>
+    </entry>
+    <entry>
+        <base>EMAIL</base>
+        <trans>Изтриване на писмо</trans>
+    </entry>
+
+
+</lexicon>

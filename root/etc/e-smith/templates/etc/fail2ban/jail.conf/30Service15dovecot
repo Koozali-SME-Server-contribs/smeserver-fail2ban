@@ -1,0 +1,25 @@
+{
+
+my $status = $dovecot{'status'} || 'disabled';
+my $f2b = $dovecot{'Fail2Ban'} || 'enabled';
+return "" if (($status ne 'enabled') || ($f2b ne 'enabled'));
+my @ports = ();
+push @ports, ($imap{'TCPPort'} || '143')
+    if (($imap{'status'} || 'disabled') eq 'enabled');
+push @ports, ($imaps{'TCPPort'} || '993')
+    if (($imaps{'status'} || 'disabled') eq 'enabled');
+my $port = join (",", @ports);
+
+$OUT .=<<"EOF";
+
+[imap]
+enabled  = true
+filter   = dovecot
+logpath  = /var/log/dovecot/dovecot.log
+action   = smeserver-iptables[port="$port",protocol=tcp,bantime=$bantime]
+EOF
+
+$OUT .= "           smeserver-sendmail[name=\"Dovecot\",dest=$maildest]\n"
+    if ($mail eq 'enabled');
+
+}

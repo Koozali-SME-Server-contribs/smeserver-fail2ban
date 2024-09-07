@@ -1,0 +1,68 @@
+{
+
+my $status = $fail2ban{'wordpress'} || 'disabled';
+return "\n# wordpress disabled \n" if ($status ne 'enabled') ;
+my @ports = ();
+push @ports, (${'httpd-e-smith'}{'TCPPort'} || '80');
+push @ports, ($modSSL{'TCPPort'} || '443');
+my $port = join (",", @ports);
+
+my $wphbantime  = $fail2ban{'WPHbantime'} || $bantime;
+my $wpsbantime  = $fail2ban{'WPSbantime'} || $bantime;
+my $wpxbantime  = $fail2ban{'WPXbantime'} || $bantime;
+my $wphfindtime = $fail2ban{'WPHfindtime'} || $findtime;
+my $wpsfindtime = $fail2ban{'WPSfindtime'} || $findtime;
+my $wpxfindtime = $fail2ban{'WPXfindtime'} || $findtime;
+my $wphmaxretry = $fail2ban{'WPHmaxretry'} || $maxretry;
+my $wpsmaxretry = $fail2ban{'WPSmaxretry'} || $maxretry;
+my $wpxmaxretry = $fail2ban{'WPXmaxretry'} || $maxretry;
+
+$OUT .=<<"EOF";
+
+[wordpress-hard]
+enabled = true
+filter = wordpress-hard
+logpath = /var/log/messages
+findtime = $wphfindtime
+maxretry = $wphmaxretry
+bantime  = $wphbantime
+backend = polling
+action = smeserver-iptables[port="$port",protocol=tcp,bantime=$wphbantime]
+EOF
+$OUT .= "            smeserver-sendmail[name=\"Wordpress (hard)\",dest=$maildest]\n"
+    if ($mail eq 'enabled');
+
+
+$OUT .=<<"EOF";
+
+[wordpress-soft]
+enabled  = true
+filter = wordpress-soft
+logpath = /var/log/messages
+findtime = $wpsfindtime
+maxretry = $wpsmaxretry
+bantime  = $wpsbantime
+backend = polling
+action = smeserver-iptables[port="$port",protocol=tcp,bantime=$wpsbantime]
+EOF
+$OUT .= "            smeserver-sendmail[name=\"Wordpress (soft)\",dest=$maildest]\n"
+    if ($mail eq 'enabled');
+
+
+$OUT .=<<"EOF";
+
+[apache-xmlrpc]
+enabled  = true
+port     = http,https
+filter   = apache-xmlrpc
+logpath  = /var/log/httpd/access_log
+findtime = $wpxfindtime
+maxretry = $wpxmaxretry
+bantime  = $wpxbantime
+action   = smeserver-iptables[port="$port",protocol=tcp,bantime=$wpxbantime]
+EOF
+$OUT .= "           smeserver-sendmail[name=\"Wordpress (xmlrpc)\",dest=$maildest]\n"
+    if ($mail eq 'enabled');
+
+}
+

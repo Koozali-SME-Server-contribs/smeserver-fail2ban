@@ -1,0 +1,196 @@
+<lexicon lang="it">
+    <entry>
+	<base>SERVICE_STATUS</base>
+	<trans>Stato del servizio fail2ban </trans>
+    </entry>
+    <entry>
+	<base>STATUS</base>
+	<trans>Stato</trans>
+    </entry>
+    <entry>
+        <base>FilterLocalNetworks_STATUS</base>
+        <trans>Mette in whitelist tutte le reti locali.</trans>
+    </entry>
+    <entry>
+        <base>FilterLocalNetworks</base>
+        <trans>Stato di FilterLocalNetworks</trans>
+    </entry>
+    <entry>
+        <base>FilterValidRemoteHosts_STATUS</base>
+        <trans>Inserire in whitelist tutti gli host remoti autorizzati ad accedere al server-manager.</trans>
+    </entry>
+    <entry>
+        <base>FilterValidRemoteHosts</base>
+        <trans>Stato FilterValidRemoteHosts</trans>
+    </entry>
+    <entry>
+        <base>BANTIME</base>
+        <trans>Impostare il periodo di ban per jails (il default iniziale è 1800 secondi).</trans>
+    </entry>
+    <entry>
+        <base>DEFAULT_BANTIME</base>
+        <trans>Bantime</trans>
+    </entry>
+    <entry>
+        <base>FINDTIME</base>
+        <trans>Imposta il periodo di find per jails (il default iniziale è 900 seconds).</trans>
+    </entry>
+    <entry>
+        <base>DEFAULT_FINDTIME</base>
+        <trans>Findtime</trans>
+    </entry>
+    <entry>
+        <base>MAXRETRY</base>
+        <trans>Impostare il valore di "default max retry" consentito prima del ban (Il default is 3).</trans>
+    </entry>
+    <entry>
+        <base>DEFAULT_MAXRETRY</base>
+        <trans>Maxretry</trans>
+    </entry>
+    <entry>
+        <base>SSHD_STATUS</base>
+        <trans>Stato di sshd jail.</trans>
+    </entry>
+    <entry>
+        <base>SSHD</base>
+        <trans>sshd</trans>
+    </entry>
+    <entry>
+        <base>QPSMTPD_STATUS</base>
+        <trans>Stato di qpsmtpd jail (messaggi in ingresso).</trans>
+    </entry>
+    <entry>
+        <base>QPSMTPD</base>
+        <trans>qpsmtpd</trans>
+    </entry>
+    <entry>
+        <base>IMAP_STATUS</base>
+        <trans>Stato di dovecot jail (servizio imap per caricamento messaggi).</trans>
+    </entry>
+    <entry>
+        <base>IMAP</base>
+        <trans>dovecot</trans>
+    </entry>
+    <entry>
+        <base>HTTPD_STATUS</base>
+        <trans>Stato di httpd jails. Molte caratteristiche per volta vengono abilitate.</trans>
+    </entry>
+    <entry>
+        <base>HTTPD</base>
+        <trans>httpd</trans>
+    </entry>
+    <entry>
+        <base>FTP_STATUS</base>
+        <trans>Stato di proftpd jail.</trans>
+    </entry>
+    <entry>
+        <base>FTP</base>
+        <trans>proftpd</trans>
+    </entry>
+    <entry>
+        <base>LEMONLDAP_STATUS</base>
+        <trans>Stato di jail LemonLDAP, se installato. Nulla è attivo se LemonLDAP non è installato o è disabilitato.</trans>
+    </entry>
+    <entry>
+        <base>LEMONLDAP</base>
+        <trans>LemonLDAP </trans>
+    </entry>
+    <entry>
+        <base>EJABBERD_STATUS</base>
+        <trans>Stato di ejabberd jail, se installato. Nulla è attivo se ejabberd non è installato o è disabilitato.</trans>
+    </entry>
+    <entry>
+        <base>EJABBERD</base>
+        <trans>ejabberd</trans>
+    </entry>
+    <entry>
+        <base>SOGOD_STATUS</base>
+        <trans>Stato di SOGO jail se installato. Nulla è attivo se SOGO non è installato o è disabilitato.</trans>
+    </entry>
+    <entry>
+        <base>SOGOD</base>
+        <trans>SOGO</trans>
+    </entry>
+    <entry>
+        <base>WORDPRESS_STATUS</base>
+        <trans>Stato di wordpress jails. E' necessario attivarlo manualmente sia che lo si abbia in una I-bay o che si usi il contrib. Installare inoltre il plugin in tutte le istanze attive di wordpress.</trans>
+    </entry>
+    <entry>
+        <base>WORDPRESS</base>
+        <trans>wordpress</trans>
+    </entry>
+    <entry>
+	<base>VALIDFROM_DESC</base>
+	<trans><![CDATA[ <hr class="sectionbar" /><h2>Host consentiti</h2> <p>Questa è una lista di host che non saranno bloccati da fail2ban.</p> ]]></trans>
+    </entry>
+    <entry>
+	<base>NO_ENTRIES_YET</base>
+	<trans>Nessun elemento inserito</trans>
+    </entry>
+    <entry>
+	<base>DESC_ADD_IP</base>
+	<trans>Per aggiungere una nuova rete consentita, inserire i dettagli sotto.</trans>
+    </entry>
+    <entry>
+        <base>ADD_IP</base>
+        <trans>Rete autorizzata</trans>
+    </entry>
+    <entry>
+        <base>DESC_ADD_BITS</base>
+        <trans>Per aggiungere una nuova rete autorizzata, inserire la subnet associata usando i bits (p.e. 22, 25 or 32).</trans>
+    </entry>
+    <entry>
+        <base>ADD_BITS</base>
+        <trans>Subnet di rete autorizzate.</trans>
+    </entry>
+    <entry>
+	<base>CURRENT_DENY_DESC</base>
+	<trans><![CDATA[ <h2>Host bloccati</h2> <p>Questa è la lista degli host correntemente bloccati. ]]></trans>
+    </entry>
+    <entry>
+	<base>FIRST_SEEN</base>
+	<trans>Primo host individuato</trans>
+    </entry>
+    <entry>
+	<base>SUCCESS</base>
+	<trans>Le nuove impostazione fail2ban sono state salvate.</trans>
+    </entry>
+    <entry>
+	<base>ERR_NO_RECORD</base>
+	<trans>Impossibile trovare il record fail2ban nel db di configurazione</trans>
+    </entry>
+    <entry>
+	<base>ERROR_STOPPING</base>
+	<trans>Errore durante l'arresto del servizio</trans>
+    </entry>            
+    <entry>
+        <base>SUCCESS_IP</base>
+        <trans>L'indirizzo IP è stato rimosso dalla ban-list</trans>
+    </entry>
+    <entry>
+        <base>SUCCESS_IP_WHITE</base>
+        <trans>L'indirizzo IP è stato rimosso dalla ban-list ed inserito in white-list</trans>
+    </entry>
+    <entry>
+        <base>ERROR_UPDATING</base>
+        <trans>Impossibile rimuovere dalla banlist</trans>
+    </entry>
+    <entry>
+        <base>ERROR_UPDATING_WHITE</base>
+        <trans>Impossibile rimuovere dalla banlist ed inserire nella whitelist</trans>
+    </entry>
+    <entry>
+        <base>ERR_EXISTS</base>
+        <trans>Errore: indirizzo IP già in whitelist</trans>
+    </entry>
+    <entry>
+        <base>SEND_MAIL_STATUS</base>
+        <trans>Invia la posta in ban</trans>
+    </entry>
+    <entry>
+        <base>EMAIL</base>
+        <trans>Mail di allerta</trans>
+    </entry>
+
+
+</lexicon>

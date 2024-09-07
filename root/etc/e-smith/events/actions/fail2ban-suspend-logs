@@ -1,0 +1,27 @@
+#!/bin/sh
+
+STATUS=$(/sbin/e-smith/db configuration getprop fail2ban status || echo disabled)
+if [ "$STATUS" != "enabled" ]; then
+  exit 0
+fi
+
+for JAIL in http-overflows http-noscript http-scan http-auth; do
+  /usr/bin/fail2ban-client status $JAIL > /dev/null 2>&1
+  if [ $? -eq 0 ]; then
+    /usr/bin/fail2ban-client set $JAIL dellogpath /var/log/httpd/error_log
+  fi
+done
+
+for JAIL in pam-generic ftp; do
+  /usr/bin/fail2ban-client status $JAIL > /dev/null 2>&1
+  if [ $? -eq 0 ]; then
+    /usr/bin/fail2ban-client set $JAIL dellogpath /var/log/secure
+  fi
+done
+
+for JAIL in lemonldap; do
+  /usr/bin/fail2ban-client status $JAIL > /dev/null 2>&1
+  if [ $? -eq 0 ]; then
+    /usr/bin/fail2ban-client set $JAIL dellogpath /var/log/messages
+  fi
+done

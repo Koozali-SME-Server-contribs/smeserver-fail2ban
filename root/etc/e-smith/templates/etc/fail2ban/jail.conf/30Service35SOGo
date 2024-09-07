@@ -1,0 +1,24 @@
+{
+
+my $status = $sogod{'status'} || 'disabled';
+my $f2b = $sogod{'Fail2Ban'} || 'enabled';
+return "\n#Sogo not available" unless ( -f "/var/log/sogo/sogo.log" );
+return "" if (($status ne 'enabled') || ($f2b ne 'enabled'));
+my @ports = ();
+push @ports, (${'httpd-e-smith'}{'TCPPort'} || '80');
+push @ports, ($modSSL{'TCPPort'} || '443');
+my $port = join (",", @ports);
+
+$OUT .=<<"EOF";
+
+[sogo]
+enabled  = true
+filter   = sogo-auth
+logpath  = /var/log/sogo/sogo.log
+action   = smeserver-iptables[port="$port",protocol=tcp,bantime=$bantime]
+EOF
+
+$OUT .= "           smeserver-sendmail[name=\"SOGo\",dest=$maildest]\n"
+    if ($mail eq 'enabled');
+
+}

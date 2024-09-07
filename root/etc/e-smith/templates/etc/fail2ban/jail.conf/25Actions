@@ -1,0 +1,7 @@
+{
+
+our $mail = $fail2ban{'Mail'} || 'disabled';
+our $maildest = $fail2ban{'MailRecipient'} || 'root';
+return '';
+
+}

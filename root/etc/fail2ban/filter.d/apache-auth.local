@@ -1,0 +1,2 @@
+[Definition]
+ignoreregex = ^%(_apache_error_client)s (AH01797: )?client denied by server configuration: /etc/httpd/conf/proxy/proxy\.pac\s*$

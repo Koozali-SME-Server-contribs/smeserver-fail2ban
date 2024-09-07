@@ -1,0 +1,6 @@
+{
+our $maxretry = $fail2ban{'MaxRetry'} || '3';
+
+$OUT .= "maxretry = $maxretry";
+
+}

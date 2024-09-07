@@ -1,0 +1,7 @@
+{
+
+our $bantime = $fail2ban{'BanTime'} || '1800';
+
+$OUT .= "bantime  = $bantime";
+
+}

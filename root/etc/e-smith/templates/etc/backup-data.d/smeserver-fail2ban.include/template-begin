@@ -1,0 +1,22 @@
+#Only non rpm owned files are backupe there
+{
+use RPM2;
+my $rpm_db = RPM2->open_rpm_db();
+
+my @dirs = qw(
+/etc/fail2ban
+/etc/fail2ban/action.d
+/etc/fail2ban/fail2ban.d
+/etc/fail2ban/filter.d
+/etc/fail2ban/jail.d
+);
+
+foreach  my $some_dir  (@dirs)  {
+  opendir(my $dh, $some_dir) || die "Can't open $some_dir: $!";
+  while ( (my $file = readdir $dh) ) {
+    next if $file =~ /^\.{1,2}$/;
+    $OUT .= "$some_dir/$file\n" unless $rpm_db->find_by_file("$some_dir/$file");
+  }
+  closedir $dh;
+}
+}

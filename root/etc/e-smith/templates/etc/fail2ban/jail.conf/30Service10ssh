@@ -1,0 +1,31 @@
+{
+
+my $port = $sshd{'TCPPort'} || '22';
+my $status = $sshd{'status'} || 'disabled';
+my $f2b = $sshd{'Fail2Ban'} || 'enabled';
+return "" if (($status ne 'enabled') || ($f2b ne 'enabled'));
+$OUT .=<<"EOF";
+
+[ssh]
+enabled  = true
+filter   = sshd
+logpath  = /var/log/sshd/sshd.log
+action   = smeserver-iptables[port="$port",protocol=tcp,bantime=$bantime]
+EOF
+
+$OUT .= "           smeserver-sendmail[name=\"SSH\",dest=$maildest]\n"
+    if ($mail eq 'enabled');
+
+$OUT .=<<"EOF";
+
+[ssh-ddos]
+enabled  = true
+filter   = sshd-ddos
+logpath  = /var/log/sshd/sshd.log
+action   = smeserver-iptables[port="$port",protocol=tcp,bantime=$bantime]
+EOF
+
+$OUT .= "           smeserver-sendmail[name=\"SSH\",dest=$maildest]\n"
+    if ($mail eq 'enabled');
+
+}

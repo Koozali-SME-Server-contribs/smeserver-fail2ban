@@ -1,0 +1,132 @@
+#!/usr/bin/perl -w
+
+use strict;
+use warnings;
+use esmith::ConfigDB;
+use Getopt::Long;
+
+our $f2bdb = esmith::ConfigDB->open('fail2ban') || esmith::ConfigDB->create('fail2ban');
+our $c = esmith::ConfigDB->open_ro;
+our %opts;
+
+
+sub usage(){
+  print<<"EOF";
+
+Usage: $0 --host=<ip> [--unban] [--protocol=tcp|udp|icmp|all] [--port=<port number>] [--bantime]
+
+  * --host must specify a valid IPv4 adress in the form 10.11.12.13 or an IPv4 subnet in the form 10.11.12.0/24
+  * --protocol can be used to specify the protocol to block. Only tcp, udp, icmp and all are valid (default is all)
+  * --port can be used to specify the port(s) to block. Only valid for tcp and udp. You can also specify a range
+    of port like 10000:20000. You can also specify several ports or range of port separated by a comma
+  * if --unban is specified, the given host will be removed from the blacklist
+    default is to add to the blacklist instead
+  * --bantime can be used to specify how long the ban should be (in seconds)
+
+EOF
+}
+
+# Check if port is valid
+sub is_valid_port($){
+  my $ports = shift;
+  my $ret = 0;
+  foreach my $port (split /,/, $ports){
+    if ($port =~ m/^(\d+):(\d+)$/){
+      $ret = 1 if ($1 >= 0 &&
+                   $1 < 65636 &&
+                   $2 >= 0 &&
+                   $2 < 65636);
+    }
+    else{
+      $ret = 1 if ($port > 0 &&
+                   $port < 65636);
+    }
+  }
+  return $ret;
+}
+
+# Generate a random uniq ID
+sub generate_uniq_id(){
+  my @chars = ('a'..'z','0'..'9');
+  my $id = '';
+  my $round = 0;
+  foreach (1..10){
+    foreach (1..15){
+      $id .= $chars[rand @chars];
+    }
+    my $eid = $f2bdb->get($id);
+    last unless ($eid);
+  }
+  die "Couldn't generate a valid uniq ID\n"
+    if ($id eq '');
+  return $id;
+}
+
+my $f2b = $c->get('fail2ban') ||
+  die "fail2ban service not found in the configuration database\n";
+
+# default is to ban a host
+$opts{unban} = '0';
+$opts{bantime} = $f2b->prop('BanTime') || '1800';
+
+GetOptions(
+    "host=s"     => \$opts{host},
+    "unban"      => \$opts{unban},
+    "protocol=s" => \$opts{proto},
+    "port=s"     => \$opts{port},
+    "bantime=s"  => \$opts{bantime}
+);
+
+# special "undef" value for port and proto
+undef $opts{proto} if ($opts{proto} eq 'undef');
+undef $opts{port} if ($opts{port} eq 'undef');
+$opts{bantime} = ($f2b->prop('BanTime') || '1800')
+    if ($opts{bantime} eq 'undef');
+
+# Check options are valid
+
+# host is required
+my @req = qw(host);
+foreach (@req){
+  usage() && die unless (defined $opts{$_});
+}
+
+# host must look like an IP address or IP with subnet
+usage() && die 
+  unless ($opts{host} =~ m'^([01]?\d\d?|2[0-4]\d|25[0-5])(?:\.[01]?\d\d?|\.2[0-4]\d|\.25[0-5]){3}(?:/[0-2]\d|/3[0-2])?$');
+
+# protocol must can only be undefined, tcp, udp or icmp
+usage() && die
+  if ($opts{proto} && $opts{proto} !~ m/^tcp|udp|icmp|all$/);
+
+# port must be a valid port number, and is only valid for tcp and udp
+usage && die
+  if ($opts{port} && (($opts{proto} && $opts{proto} !~ m/^tcp|udp$/) || !is_valid_port($opts{port})));
+
+if ($opts{unban}){
+  foreach ($f2bdb->get_all_by_prop(Host => $opts{host})){
+    my $proto = $_->prop('Protocol') || '';
+    my $port = $_->prop('Port') || '';
+    next if ($opts{proto} && $proto ne $opts{proto});
+    next if ($opts{port} && $port ne $opts{port} && $proto =~ m/^tcp|udp$/);
+    $_->delete();
+  }
+}
+else{
+  my $id = generate_uniq_id();
+  my %props;
+  $props{'type'} = 'ban';
+  $props{'Host'} = $opts{host};
+  $props{'Protocol'} = $opts{proto}
+    if ($opts{proto});
+  $props{'Port'} = $opts{port}
+    if ($opts{port});
+  $props{'BanTimestamp'} = time();
+  $props{'UnbanTimestamp'} = time()+$opts{bantime};
+  $f2bdb->new_record($id, \%props);
+}
+
+die "An error occured while updating the firewall rules"
+  unless (system("/sbin/e-smith/signal-event fail2ban-update") == 0);
+
+exit(0);

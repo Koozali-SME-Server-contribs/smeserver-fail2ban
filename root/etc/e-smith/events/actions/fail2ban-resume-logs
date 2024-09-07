@@ -1,0 +1,32 @@
+#!/bin/sh
+
+STATUS=$(/sbin/e-smith/db configuration getprop fail2ban status || echo disabled)
+if [ "$STATUS" != "enabled" ]; then
+  exit 0
+fi
+
+sleep 1
+# Makes sure /var/log/httpd/error_log is not a dangling symlink
+[ -e /var/log/httpd/error_log ] || touch /var/log/httpd/error_log
+for JAIL in http-overflows http-noscript http-scan http-auth; do
+  /usr/bin/fail2ban-client status $JAIL > /dev/null 2>&1
+  if [ $? -eq 0 ]; then
+    /usr/bin/fail2ban-client set $JAIL addlogpath /var/log/httpd/error_log
+  fi
+done
+
+[ -e /var/log/secure ] || touch /var/log/secure
+for JAIL in pam-generic ftp; do
+  /usr/bin/fail2ban-client status $JAIL > /dev/null 2>&1
+  if [ $? -eq 0 ]; then
+    /usr/bin/fail2ban-client set $JAIL addlogpath /var/log/secure
+  fi
+done
+
+[ -e /var/log/messages ] || touch /var/log/messages
+for JAIL in lemonldap; do
+  /usr/bin/fail2ban-client status $JAIL > /dev/null 2>&1
+  if [ $? -eq 0 ]; then
+    /usr/bin/fail2ban-client set $JAIL addlogpath /var/log/messages
+  fi
+done

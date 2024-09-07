@@ -1,0 +1,11 @@
+
+[pam-generic]
+enabled  = true
+filter   = pam-generic
+logpath  = /var/log/secure
+maxretry = {$maxretry*2}
+action   = smeserver-iptables[bantime={"$bantime"}]
+{
+$OUT .= "           smeserver-sendmail[name=\"PAM generic\",dest=$maildest]\n"
+    if ($mail eq 'enabled');
+}

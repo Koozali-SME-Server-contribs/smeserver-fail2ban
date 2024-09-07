@@ -1,0 +1,27 @@
+{
+
+my $status = $qpsmtpd{'status'} || 'disabled';
+my $f2b = $qpsmtpd{'Fail2Ban'} || 'enabled';
+return "" if (($status ne 'enabled') || ($f2b ne 'enabled'));
+my @ports = ();
+push @ports, ($qpsmtpd{'TCPPort'} || '25');
+push @ports, ($sqpsmtpd{'TCPPort'} || '465')
+  if (($sqpsmtpd{'status'} || 'disabled') eq 'enabled');
+my $port = join (",", @ports);
+
+my $max = $maxretry*3;
+
+$OUT .=<<"EOF";
+
+[qpsmtpd]
+enabled  = true
+filter   = qpsmtpd
+logpath  = /var/log/*qpsmtpd/current
+maxretry = $max
+action   = smeserver-iptables[port="$port",protocol=tcp,bantime=$bantime]
+EOF
+
+$OUT .= "           smeserver-sendmail[name=\"Qpsmtpd\",dest=$maildest]\n"
+    if ($mail eq 'enabled');
+
+}

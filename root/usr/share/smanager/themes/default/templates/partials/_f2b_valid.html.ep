@@ -1,0 +1,35 @@
+<div id="f2b_valid">
+    <hr class='sectionbar' /><h2>
+    %=l 'f2b_VALIDFROM_TITLE'
+    </h2><p>
+    %=l 'f2b_VALIDFROM_DESC'
+    </p>
+    %	my @valids = @{$c->get_valid_from()};
+    %	if ( @valids ) {
+	<p>
+	<table class="sme-border"><tbody>
+	<tr><th class='sme-border'>
+    	    %=l 'NETWORK'
+    	    </th><th class='sme-border'>
+    	    %=l 'REMOVE'
+    	</th></tr>
+    %    foreach my $v ( @valids) {
+    %        my $checked = '';
+	    <tr>
+            %= t td => (class => 'sme-border') => "$v"
+	    <td class='sme-border'>
+	    % if ( $checked eq 'checked' ) {
+		<input type='checkbox' name='ValidFromRemove' checked value='<%= $v %>'>
+	    %} else {
+		%= check_box 'ValidFromRemove' => $v
+	    %}
+	    </td>
+    	</tr>
+    %    }
+    	</tbody></table></span></p>
+    %	} else {
+	<b>
+        %=l 'f2b_NO_ENTRIES_YET';
+        </b>
+    %	}
+</div>

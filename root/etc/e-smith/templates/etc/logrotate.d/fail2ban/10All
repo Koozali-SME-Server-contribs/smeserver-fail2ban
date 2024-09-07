@@ -1,0 +1,8 @@
+/var/log/fail2ban/*.log \{
+        missingok
+        weekly
+        rotate 24
+        compress
+        notifempty
+        copytruncate
+\}

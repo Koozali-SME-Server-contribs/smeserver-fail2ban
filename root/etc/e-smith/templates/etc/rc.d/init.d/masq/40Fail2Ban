@@ -1,0 +1,6 @@
+    # A blacklist chain for fail2ban
+    /sbin/iptables --new-chain Fail2Ban
+    /sbin/iptables --new-chain Fail2Ban_1
+    /sbin/iptables --append Fail2Ban -j Fail2Ban_1
+    /sbin/iptables --insert INPUT 1 \
+        -j Fail2Ban

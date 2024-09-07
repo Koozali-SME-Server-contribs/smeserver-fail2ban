@@ -1,0 +1,792 @@
+commit 0e8f39c6b123b947450223a7a97b2cb2904a8221
+Author: Daniel Berteaud <daniel@firewall-services.com>
+Date:   Fri Oct 27 14:34:58 2017 +0200
+
+    Ignore qpsmtpd greylisting
+
+commit a166528140bf2bd8995f0015a5d088e495bcda0a
+Merge: ae727cb a9211f5
+Author: Daniel Berteaud <daniel@firewall-services.com>
+Date:   Fri Oct 27 14:34:18 2017 +0200
+
+    Merge branch 'sme9'
+
+commit a9211f5f9312a048f714de3f0813dc5fc470240a
+Author: Daniel Berteaud <daniel@firewall-services.com>
+Date:   Thu Nov 17 11:20:14 2016 +0100
+
+    Spec file update
+
+commit bc93ec4649b8368e5ea6aaf54053bdcf4fdf34b6
+Author: Daniel Berteaud <daniel@firewall-services.com>
+Date:   Thu Nov 17 11:07:39 2016 +0100
+
+    Make sure log files exist before resuming jails after logrotate
+
+commit 3738f0a5bf47de1868c14d16b1e0ffbbd338b80b
+Author: Daniel Berteaud <daniel@firewall-services.com>
+Date:   Tue Aug 2 09:48:36 2016 +0200
+
+    Spec file update
+
+commit f96b380bcb54b997e14e7b65aa67cb22b5ea53ef
+Author: Daniel Berteaud <daniel@firewall-services.com>
+Date:   Tue Aug 2 09:14:56 2016 +0200
+
+    Possibility to filter valid remote hosts
+
+commit 5e941c60c918a7aa59a1b550ca16e1dc9aa80cf2
+Author: Daniel Berteaud <daniel@firewall-services.com>
+Date:   Tue Jul 5 21:24:57 2016 +0200
+
+    Spec file update
+
+commit 8584e39c21dbdec57eb859df3e1edd113a7acb71
+Author: Daniel Berteaud <daniel@firewall-services.com>
+Date:   Tue Jul 5 21:23:45 2016 +0200
+
+    Fix compat with older qpsmtpd
+
+commit 885ab8ac54419431bfd3e36b36c707e4c95b7e08
+Author: Daniel Berteaud <daniel@firewall-services.com>
+Date:   Thu Jun 9 14:28:46 2016 +0200
+
+    Spec file update
+
+commit 96a290ca5ed4d9df5d11bfaf69b716528411037e
+Author: Daniel Berteaud <daniel@firewall-services.com>
+Date:   Thu Jun 9 14:22:37 2016 +0200
+
+    Adapt qpsmtpd regex to work with qopsmtpd 0.96
+
+commit 0b1549615d112b5fcd01edd9bfbb60bf0fc796f6
+Author: Daniel Berteaud <daniel@firewall-services.com>
+Date:   Mon Feb 29 11:40:48 2016 +0100
+
+    Spec file update
+
+commit ae727cb9001d0c7a6f6456c132eac03d2433240e
+Author: Daniel Berteaud <daniel@firewall-services.com>
+Date:   Mon Feb 29 11:22:11 2016 +0100
+
+    Spec file update
+
+commit 5f11114572e45c52d1aed58dfb228837fe7bda95
+Author: Daniel Berteaud <daniel@firewall-services.com>
+Date:   Mon Feb 29 11:21:10 2016 +0100
+
+    Ignore failures to retrieve proxy.pac
+
+commit 7ed43d417110b9b6ae3314170ad0ee5c3b524d43
+Author: Daniel Berteaud <daniel@firewall-services.com>
+Date:   Mon Feb 29 11:21:10 2016 +0100
+
+    Ignore failures to retrieve proxy.pac
+
+commit 2ab1d8ab05e910519b1c0abe470de3e9a2dc4f10
+Author: Daniel Berteaud <daniel@firewall-services.com>
+Date:   Fri Jan 8 11:56:58 2016 +0100
+
+    Spec file update
+
+commit 756a93cb37a247171fdf962553355f80add3ee60
+Author: Daniel Berteaud <daniel@firewall-services.com>
+Date:   Fri Jul 24 09:41:22 2015 +0200
+
+    Add missing $OUT .=<<"EOF"; statements
+
+commit 07c989d8cebaec2caa303c39b099b20f53d67d4d
+Author: Daniel Berteaud <daniel@firewall-services.com>
+Date:   Fri Jul 24 09:15:43 2015 +0200
+
+    Switch to upstream Ejabberd filter
+
+commit 9fb1fe4b7536f01d7796b32fb28b1029a1398c48
+Author: Daniel Berteaud <daniel@firewall-services.com>
+Date:   Fri Jul 24 09:11:03 2015 +0200
+
+    ENable more apache jails
+
+commit 5b1a6c367a92303bf1eccdf39e6a5ba508696184
+Author: Daniel Berteaud <daniel@firewall-services.com>
+Date:   Fri Jul 24 09:10:51 2015 +0200
+
+    Update main daemon conf template
+
+commit 1672a8431c4912fe92609467b9c1965bd5d07159
+Author: Daniel Berteaud <daniel@firewall-services.com>
+Date:   Wed Apr 15 14:07:46 2015 +0200
+
+    Spec file update
+
+commit 13cf1a2f6ef6e0889d3eec41759633583bd01a00
+Author: Daniel Berteaud <daniel@firewall-services.com>
+Date:   Wed Apr 15 14:07:02 2015 +0200
+
+    Spec file update
+
+commit 1b06a141972db3a1581a1ab6e65b3bbfcdce1c5b
+Author: Daniel Berteaud <daniel@firewall-services.com>
+Date:   Wed Apr 15 14:06:00 2015 +0200
+
+    Start fail2ban later
+
+commit 65854c6909be6b658d6f37cf862d24192a70fcf4
+Author: Daniel Berteaud <daniel@firewall-services.com>
+Date:   Wed Apr 15 14:06:00 2015 +0200
+
+    Start fail2ban later
+
+commit 72fd0d81c2fd43248e429e7585708783c17a4eac
+Author: Daniel Berteaud <daniel@firewall-services.com>
+Date:   Tue Jan 27 22:37:05 2015 +0100
+
+    Spec file update
+
+commit c203c38bf7502bdabe312b32b164fc0751d501db
+Author: Daniel Berteaud <daniel@firewall-services.com>
+Date:   Tue Jan 27 21:59:26 2015 +0100
+
+    Suspend log monitoring during logrotate
+    Instead of restarting fail2ban daemon
+
+commit a0f024c4863fb478ee456544037ff6e8779c6166
+Author: Daniel Berteaud <daniel@firewall-services.com>
+Date:   Tue Jan 27 22:36:15 2015 +0100
+
+    Spec file update
+
+commit 35b64f0502b256159a9ceab64a2b993a40b4a5fe
+Author: Daniel Berteaud <daniel@firewall-services.com>
+Date:   Tue Jan 27 21:59:26 2015 +0100
+
+    Suspend log monitoring during logrotate
+    Instead of restarting fail2ban daemon
+
+commit 71c09c53f4a3c28b50e5550089523189dac27e89
+Author: Daniel Berteaud <daniel@firewall-services.com>
+Date:   Thu Jan 15 21:53:24 2015 +0100
+
+    Spec file update
+
+commit 97e122e4cba252439d8063b50f40c6710125c206
+Author: Daniel Berteaud <daniel@firewall-services.com>
+Date:   Thu Jan 15 21:51:39 2015 +0100
+
+    Spec file update
+
+commit bc63b7a9fe050b0c1e2dab74ef5af4352ccfe181
+Author: Daniel Berteaud <daniel@firewall-services.com>
+Date:   Mon Jan 5 11:11:35 2015 +0100
+
+    Fix LL::NG jail name
+
+commit a1e5bd2b2c835ccb24eee02fe054df4da3955610
+Author: Daniel Berteaud <daniel@firewall-services.com>
+Date:   Mon Jan 5 11:11:35 2015 +0100
+
+    Fix LL::NG jail name
+
+commit 337c89ced4fbc075ad5e98e1ab2152d72ed9fb1c
+Author: Daniel Berteaud <daniel@firewall-services.com>
+Date:   Wed Sep 17 17:41:53 2014 +0200
+
+    Spec file update
+
+commit cac3d51734bbb102d1b763903bf01932735a4200
+Author: Daniel Berteaud <daniel@firewall-services.com>
+Date:   Wed Sep 17 14:40:03 2014 +0200
+
+    Restart fail2ban during logrotate event
+
+commit 30db831b060bde1a76b636b789cf3364ab838136
+Author: Daniel Berteaud <daniel@firewall-services.com>
+Date:   Wed Sep 17 17:39:55 2014 +0200
+
+    Spec file update
+
+commit b23fc96e2eecf74f7c36bf6229a7774ad1ac8d89
+Author: Daniel Berteaud <daniel@firewall-services.com>
+Date:   Wed Sep 17 14:40:03 2014 +0200
+
+    Restart fail2ban during logrotate event
+
+commit 2a25c2a6fdc86369bfc57eb74bd2329fe5f4a47d
+Author: Daniel Berteaud <daniel@firewall-services.com>
+Date:   Mon Sep 8 12:15:14 2014 +0200
+
+    Spec file update
+
+commit 799310bef3d35c4fa0967decd7d756d7e21c5b1b
+Author: Daniel Berteaud <daniel@firewall-services.com>
+Date:   Mon Jun 23 21:40:28 2014 +0200
+
+    Define empty actionstart, actionstop and actioncheck
+    in smeserver-iptables action
+
+commit 4da2dd69790d3da74bde0e531e63d6d4cb27aa87
+Author: Daniel Berteaud <daniel@firewall-services.com>
+Date:   Mon Jun 23 21:38:17 2014 +0200
+
+    Define pidfile in fail2ban.conf
+
+commit 8f9f7ba6558657a542fe3711ba092fdc7c1f336b
+Author: Daniel Berteaud <daniel@firewall-services.com>
+Date:   Mon Jun 23 21:37:41 2014 +0200
+
+    Pre-create fail2ban log file so it can start the first time
+    Needed on EL6 version of fail2ban
+
+commit 58877ee9874054d5b923fd218d06ca6586520e0a
+Author: Daniel Berteaud <daniel@firewall-services.com>
+Date:   Wed Apr 23 09:21:25 2014 +0200
+
+    sogo-auth.conf is included in EL6 build of fail2ban
+
+commit b92a8aa92cd66aba40eaa937643e6be3787596e0
+Author: Daniel Berteaud <daniel@firewall-services.com>
+Date:   Wed Jun 25 17:30:21 2014 +0200
+
+    spec file update
+
+commit bd770e2f115f391503339770feb4605d0e52a745
+Author: Daniel Berteaud <daniel@firewall-services.com>
+Date:   Wed Jun 25 17:29:36 2014 +0200
+
+    spec file update
+
+commit fbd9cab08aec9e9cccf94f8b1440075a5bf42d21
+Author: Daniel Berteaud <daniel@firewall-services.com>
+Date:   Wed Jun 25 17:28:19 2014 +0200
+
+    Correctly handle single IP in IgnoreIP prop
+
+commit 1db538bbd0bd1886db606750e6bdb79982912081
+Author: Daniel Berteaud <daniel@firewall-services.com>
+Date:   Wed Jun 25 17:28:19 2014 +0200
+
+    Correctly handle single IP in IgnoreIP prop
+
+commit fd3c7ae78ad2d2c5f107e84553d286e3ae7ad378
+Author: Daniel Berteaud <daniel@firewall-services.com>
+Date:   Tue Jun 24 08:53:42 2014 +0200
+
+    Spec file update
+
+commit 831e0580859e2e178e36f9424b1604b2bbadc5cb
+Author: Daniel Berteaud <daniel@firewall-services.com>
+Date:   Mon Jun 23 23:07:35 2014 +0200
+
+    Relax proxy regex to prevent proxy.pac ban
+
+commit 42b940281f48ce90faa106624f38ac15db7dad23
+Author: Daniel Berteaud <daniel@firewall-services.com>
+Date:   Tue Jun 24 08:52:45 2014 +0200
+
+    Spec file update
+
+commit 8d1b7034ed90559e1bc65fc00c18054cb3b975ce
+Author: Daniel Berteaud <daniel@firewall-services.com>
+Date:   Mon Jun 23 23:07:35 2014 +0200
+
+    Relax proxy regex to prevent proxy.pac ban
+
+commit 27fffc9ef423c4738a25ebab45ec0020a1b0328d
+Author: Daniel Berteaud <daniel@firewall-services.com>
+Date:   Mon Jun 23 22:01:38 2014 +0200
+
+    Spec file update
+
+commit 593c15112004d2f3b4724820070c31eb9d9201a1
+Author: Daniel Berteaud <daniel@firewall-services.com>
+Date:   Mon Jun 23 21:40:28 2014 +0200
+
+    Define empty actionstart, actionstop and actioncheck
+    in smeserver-iptables action
+
+commit a862d253283d88af383c8db916546c66ae52093f
+Author: Daniel Berteaud <daniel@firewall-services.com>
+Date:   Mon Jun 23 21:38:17 2014 +0200
+
+    Define pidfile in fail2ban.conf
+
+commit fbc84a6219d5d9b5d6f9493e17fa46d9513adf92
+Author: Daniel Berteaud <daniel@firewall-services.com>
+Date:   Mon Jun 23 21:37:41 2014 +0200
+
+    Pre-create fail2ban log file so it can start the first time
+    Needed on EL6 version of fail2ban
+
+commit f214e95046bd2d87e272f146609be022d65b7219
+Author: Daniel Berteaud <daniel@firewall-services.com>
+Date:   Wed Apr 23 09:22:25 2014 +0200
+
+    Spec file update
+
+commit 9ef3a867ec6df07d04bbc73861e8ff48d840ee3e
+Author: Daniel Berteaud <daniel@firewall-services.com>
+Date:   Wed Apr 23 09:21:25 2014 +0200
+
+    sogo-auth.conf is included in EL6 build of fail2ban
+
+commit f3d69c1264f706ca615b19e24a9365abb9da9235
+Author: Daniel Berteaud <daniel@firewall-services.com>
+Date:   Wed Dec 18 16:07:29 2013 +0100
+
+    spec file update
+
+commit 43c8140cbd130b1f51f801bf27ad30aeafe59327
+Author: Daniel Berteaud <daniel@firewall-services.com>
+Date:   Wed Dec 18 16:06:40 2013 +0100
+
+    Fix port, which was incorrectly set to proto
+
+commit d5d4839b9b4e13a2b5419416658aae81269b0b2e
+Author: Daniel Berteaud <daniel@firewall-services.com>
+Date:   Tue Nov 19 16:03:46 2013 +0100
+
+    spec file update
+
+commit 8c158ec422076444db488bc7ab92c24a212766fa
+Author: Daniel Berteaud <daniel@firewall-services.com>
+Date:   Tue Nov 19 11:48:21 2013 +0100
+
+    Create the DB entry in one transaction to reduce the amount of logs for each ban
+
+commit 093957117d15c7ad27c8b9033fc49bf9139474bb
+Author: Daniel Berteaud <daniel@firewall-services.com>
+Date:   Thu Jul 4 11:02:07 2013 +0200
+
+    update spec file
+
+commit 92e8668ff553df4ffb1306f9ddf5fa20a97cf0c9
+Author: Daniel Berteaud <daniel@firewall-services.com>
+Date:   Thu Jul 4 11:01:24 2013 +0200
+
+    Fix service name for LemonLDAP::NG
+
+commit adb52654d7b9147db6bffedda4b46a38419780c0
+Author: Daniel Berteaud <daniel@firewall-services.com>
+Date:   Tue May 14 14:50:59 2013 +0200
+
+    update spec file
+
+commit d8d650fd45e32c5fa08335e74fa985ba9f9a39b0
+Author: Daniel Berteaud <daniel@firewall-services.com>
+Date:   Tue May 14 14:49:59 2013 +0200
+
+    Default to enable mail notifications
+
+commit 3fe622a02e7f2adba7bd8125354f1dab55c90941
+Author: Daniel Berteaud <daniel@firewall-services.com>
+Date:   Mon May 13 12:10:15 2013 +0200
+
+    Add missing type in config DB for fail2ban service
+
+commit e4db556bf366ae9671e89bef277fcb2dd0b6dfa4
+Author: Daniel Berteaud <daniel@firewall-services.com>
+Date:   Thu May 9 14:30:57 2013 +0200
+
+    Possibility to disable jails for individual services
+
+commit 77ba56b52ec7097ca38fa183bfa76bcd2181ea01
+Author: Daniel Berteaud <daniel@firewall-services.com>
+Date:   Thu May 9 11:15:42 2013 +0200
+
+    Create fail2ban DB if it doesn't exist
+
+commit 5420a45ffaccd84419923da0915c5e2b801a2f2e
+Author: Daniel Berteaud <daniel@firewall-services.com>
+Date:   Sat May 4 12:52:43 2013 +0200
+
+    Some more apache-scan regex
+
+commit 2da82e6d45a337d1d7a1ca31d0c54d0eb5a8fa31
+Author: Daniel Berteaud <daniel@firewall-services.com>
+Date:   Sat May 4 12:41:46 2013 +0200
+
+    Add Ejabberd filter and jail
+
+commit 1f8d32a6e02a5e6114bbc3708bc5058984ad4600
+Author: Daniel Berteaud <daniel@firewall-services.com>
+Date:   Sat May 4 12:34:55 2013 +0200
+
+    Add a few regex in apache-scan filter
+
+commit 2d41499e2eeea21d63460eecc9cc72d04734a602
+Author: Daniel Berteaud <daniel@firewall-services.com>
+Date:   Sat May 4 02:11:26 2013 +0200
+
+    Fix maxretry and action order in qpsmtpd jail conf
+
+commit 57b7e1778906424f5cb005a486788199e5a2a973
+Author: Daniel Berteaud <daniel@firewall-services.com>
+Date:   Sat May 4 01:53:01 2013 +0200
+
+    Fix qpsmtpd jail to detect other denied reason (like dnsbl, early_talker etc...)
+
+commit 096e5264d35476d68fe89a03321ec3e093e4bbaf
+Author: Daniel Berteaud <daniel@firewall-services.com>
+Date:   Fri May 3 16:57:29 2013 +0200
+
+    Set default maxretry to 3
+
+commit 17dd080c5d63f9d866bd5a7b2f99b5c920705b66
+Author: Daniel Berteaud <daniel@firewall-services.com>
+Date:   Fri May 3 16:57:08 2013 +0200
+
+    Fix pam generic description in mail notification and increase maxretry, so it's not triggerd at the same time as other jails
+
+commit 0865b67e7cd90b88ef107da8a63a4da2636c1257
+Author: Daniel Berteaud <daniel@firewall-services.com>
+Date:   Fri May 3 16:52:10 2013 +0200
+
+    Increase findtime to 900
+
+commit 7f2dc909f2373f63e6e97d31ae6449f6ff525cb2
+Author: Daniel Berteaud <daniel@firewall-services.com>
+Date:   Fri May 3 16:50:52 2013 +0200
+
+    Default to use DNS
+
+commit a04440c3b264d451e4ee8c1ee0b0ec62c7885bd5
+Author: Daniel Berteaud <daniel@firewall-services.com>
+Date:   Fri May 3 15:41:30 2013 +0200
+
+    add ssh-ddos jail
+
+commit 14170ae2979aeaa533cdba1f12ab8ac470d42894
+Author: Daniel Berteaud <daniel@firewall-services.com>
+Date:   Fri May 3 15:34:04 2013 +0200
+
+    Use upstream sogo-auth filter
+
+commit ba323c25578e5a7bf3dcb209c5607bef00f10505
+Author: Daniel Berteaud <daniel@firewall-services.com>
+Date:   Fri May 3 12:01:31 2013 +0200
+
+    Fix actions for the recidive jail
+
+commit 5eb66234d76e22dc135b6412ace5fea477242791
+Author: Daniel Berteaud <daniel@firewall-services.com>
+Date:   Fri May 3 11:31:30 2013 +0200
+
+    Add a jail for proftpd
+
+commit 8131efc2ecc3b605d38908e498ef673690608496
+Author: Daniel Berteaud <daniel@firewall-services.com>
+Date:   Fri May 3 11:20:15 2013 +0200
+
+    Expand jail.conf and restart fail2ban on network-create, network-delete and remoteaccess-update
+
+commit ece16d115994b9a28091827a8ae80aeef2b141aa
+Author: Daniel Berteaud <daniel@firewall-services.com>
+Date:   Fri May 3 11:17:56 2013 +0200
+
+    Whitelist the local IP of the server itself
+
+commit 6ffdca75017c429ec3949fc42171e40085187b8b
+Author: Daniel Berteaud <daniel@firewall-services.com>
+Date:   Fri May 3 00:05:59 2013 +0200
+
+    rename smeserver action to smeserver-iptables
+
+commit b81e45174b03df2bf666a30c3a4fbe256d055dd8
+Author: Daniel Berteaud <daniel@firewall-services.com>
+Date:   Fri May 3 00:03:59 2013 +0200
+
+    Use a custom sendmail conf to only send a mail on ban
+
+commit be1410934a09ccbc1ba13f9286f8ffe0428a45fd
+Author: Daniel Berteaud <daniel@firewall-services.com>
+Date:   Thu May 2 23:03:26 2013 +0200
+
+    Fix syntax error in qpsmtpd jail template
+
+commit 5f6c3d717405c6596e71f16ef10d25c3182d2112
+Author: Daniel Berteaud <daniel@firewall-services.com>
+Date:   Thu May 2 19:11:51 2013 +0200
+
+    Set default maxretry to 4
+
+commit 2bc85614b1b7c211893ea6679da5388f0b07aca0
+Author: Daniel Berteaud <daniel@firewall-services.com>
+Date:   Thu May 2 19:10:31 2013 +0200
+
+    Add qpsmtpd jail
+
+commit f9e841e5c2e60ec0409ae4449ccfcafdbffb4bb3
+Author: Daniel Berteaud <daniel@firewall-services.com>
+Date:   Thu May 2 17:53:28 2013 +0200
+
+    Remove unused name var in pam-generic jail
+
+commit eb22e2eb6b8c18309a836cf72d90fe401d3ba595
+Author: Daniel Berteaud <daniel@firewall-services.com>
+Date:   Thu May 2 17:22:12 2013 +0200
+
+    Enhance apache-scan filters
+
+commit cb73eb7a4bf676207199b6cd39c0e3fc9e18ebf1
+Author: Daniel Berteaud <daniel@firewall-services.com>
+Date:   Thu May 2 16:33:54 2013 +0200
+
+    Insert fail2ban rule before state_chk and local_chk so established connexions can be stopped for banned host, and local hosts may also be banned
+
+commit 1b7f16e314704c3e39261f9964ecae0106f724cb
+Author: Daniel Berteaud <daniel@firewall-services.com>
+Date:   Thu May 2 16:29:01 2013 +0200
+
+    expand $bantime variable in pam jail
+
+commit 911db13c49e1a64b19359cd68cb06d2a47dad6af
+Author: Daniel Berteaud <daniel@firewall-services.com>
+Date:   Thu May 2 16:28:27 2013 +0200
+
+    escape quotes in jail templates
+
+commit d33fe92435a29298ce8241b024eac4938c588331
+Author: Daniel Berteaud <daniel@firewall-services.com>
+Date:   Thu May 2 16:19:53 2013 +0200
+
+    Default to disabled for jails
+
+commit 5240cfb528e373ec34cea694325a7d26ea19473b
+Author: Daniel Berteaud <daniel@firewall-services.com>
+Date:   Thu May 2 16:18:48 2013 +0200
+
+    Add LL::NG filter and jail and default to disabled for SOGo jail
+
+commit 3285432916cd7d4db0d1aaffeeb948271fc068b4
+Author: Daniel Berteaud <daniel@firewall-services.com>
+Date:   Thu May 2 16:14:26 2013 +0200
+
+    Fix sogo failregex
+
+commit 97d352dda17a05b5024ebd1493d60cddacf6c3bd
+Author: Daniel Berteaud <daniel@firewall-services.com>
+Date:   Thu May 2 15:59:25 2013 +0200
+
+    Variables are not passed correctly, so define actions in each jail
+
+commit d941c985ae64128c95565b124533aabf5b13c0d1
+Author: Daniel Berteaud <daniel@firewall-services.com>
+Date:   Thu May 2 15:41:03 2013 +0200
+
+    fix action tempates
+
+commit 08b187212a6afadbecaf368afddfd9546b651373
+Author: Daniel Berteaud <daniel@firewall-services.com>
+Date:   Thu May 2 14:58:19 2013 +0200
+
+    Fix actions for all the services
+
+commit 8b8e59de61a859301f7f771bedb5a44f30b3921f
+Author: Daniel Berteaud <daniel@firewall-services.com>
+Date:   Thu May 2 14:44:12 2013 +0200
+
+    Fix a syntax error in smeserver-fail2ban
+
+commit f2cfad3448c62db86e1037b08a9d41ed076751c6
+Author: Daniel Berteaud <daniel@firewall-services.com>
+Date:   Thu May 2 14:40:51 2013 +0200
+
+    Fix apache-scan regex
+
+commit 9560117ab7078ce2699f98f0d23170061f6f2d5a
+Author: Daniel Berteaud <daniel@firewall-services.com>
+Date:   Thu May 2 14:40:20 2013 +0200
+
+    Fix actions template in jail.conf
+
+commit 3f165421d4496aa573c38baf696e02efe0d54994
+Author: Daniel Berteaud <daniel@firewall-services.com>
+Date:   Thu May 2 14:37:31 2013 +0200
+
+    Add a jail for SOGo
+
+commit 4b7d3586d5722d5f2bd2a19cc4c1526097a04cb7
+Author: Daniel Berteaud <daniel@firewall-services.com>
+Date:   Thu May 2 14:16:04 2013 +0200
+
+    Define actions in the default section, and add a prop to enable mail alerts
+
+commit 0ba11fc416fda0045a33f693b3c930dab8a8418f
+Author: Daniel Berteaud <daniel@firewall-services.com>
+Date:   Thu May 2 14:00:14 2013 +0200
+
+    pass bantime arg to smeserver-fail2ban action
+
+commit daa6416b136fcbe44dfc1876e502cde4cea0af46
+Author: Daniel Berteaud <daniel@firewall-services.com>
+Date:   Thu May 2 13:41:55 2013 +0200
+
+    Add the timestamp for unban action in the database
+
+commit 613b3220eff527da72ad112c01f51d765663c408
+Author: Daniel Berteaud <daniel@firewall-services.com>
+Date:   Thu May 2 04:10:11 2013 +0200
+
+    Only return after all the rules have been inserted, not between each rules (in masq templates)
+
+commit 77662adefdb43c2ec2e16c1a37505cd6f2fcc8e8
+Author: Daniel Berteaud <daniel@firewall-services.com>
+Date:   Thu May 2 04:06:04 2013 +0200
+
+    quote the port in jails to allow multiple ports with a comma
+
+commit 05dd76c85772c584aeb4e2500fa07b4eadcfa316
+Author: Daniel Berteaud <daniel@firewall-services.com>
+Date:   Thu May 2 03:59:56 2013 +0200
+
+    Use the polling backend for the recidive jail to prevent infinite loop if we increase verbosity of the daemon
+
+commit 41dab440265237144de1369ef283b883d2fab058
+Author: Daniel Berteaud <daniel@firewall-services.com>
+Date:   Thu May 2 03:58:34 2013 +0200
+
+    Convert networks addresses to CIDR
+
+commit 5e358594af7bb07d8b6fbdd5e1cdb80f27e927ab
+Author: Daniel Berteaud <daniel@firewall-services.com>
+Date:   Thu May 2 03:58:12 2013 +0200
+
+    Fix imap jail syntax
+
+commit 624ad98388c7c5fffc2ec06edaf1947a8625311f
+Author: Daniel Berteaud <daniel@firewall-services.com>
+Date:   Thu May 2 03:41:02 2013 +0200
+
+    Fix http jail template
+
+commit 42bb3ba3f4c0c7c1a2c6d8bdfb08b21445298401
+Author: Daniel Berteaud <daniel@firewall-services.com>
+Date:   Thu May 2 03:24:35 2013 +0200
+
+    Fix masq template syntax
+
+commit a2c6621151925dc8446a0c9e359382c137409439
+Author: Daniel Berteaud <daniel@firewall-services.com>
+Date:   Thu May 2 03:10:17 2013 +0200
+
+    Increase default maxretry to 5
+
+commit 07c9504b39b94c6fc928dd081bb07fd76c744aff
+Author: Daniel Berteaud <daniel@firewall-services.com>
+Date:   Thu May 2 03:09:36 2013 +0200
+
+    Add a pam-generic jail
+
+commit 52bf6b871da31bf39e9299404af6462e234efcc9
+Author: Daniel Berteaud <daniel@firewall-services.com>
+Date:   Thu May 2 03:02:54 2013 +0200
+
+    add a jail for apache
+
+commit 4df9a2848c5affc96ef2054db311c479c7405313
+Author: Daniel Berteaud <daniel@firewall-services.com>
+Date:   Thu May 2 02:13:52 2013 +0200
+
+    Use multiport iptables module to support several ports in one rule
+
+commit d373fabde8910d7a8ad23be95b53eaed5f3f3f8d
+Author: Daniel Berteaud <daniel@firewall-services.com>
+Date:   Thu May 2 02:09:18 2013 +0200
+
+    Add a jail for dovecot
+
+commit 390c69787589767c8bc5fd0aaa497c14156584b2
+Author: Daniel Berteaud <daniel@firewall-services.com>
+Date:   Thu May 2 01:54:11 2013 +0200
+
+    Only enable SSH jail if ssh service is enabled
+
+commit 6eb50b8c84bc3435b774e05222065ff0dd97172c
+Author: Daniel Berteaud <daniel@firewall-services.com>
+Date:   Thu May 2 01:51:49 2013 +0200
+
+    Enable the recidive jail (monitor fail2ban's own logs to ban for a longer period hosts which gets banned several time)
+
+commit 3efe85e03eab32f4b7fcd10e62d48ec226a756ad
+Author: Daniel Berteaud <daniel@firewall-services.com>
+Date:   Thu May 2 01:44:54 2013 +0200
+
+    whitelist the whole 127.0.0.0/8 mask
+
+commit 1848a6a869855b2693a7fe30d4d93359b641d440
+Author: Daniel Berteaud <daniel@firewall-services.com>
+Date:   Thu May 2 01:44:22 2013 +0200
+
+    Add IgnoreIP prop to specify a local list of IP to prevent from being banned
+
+commit f81ad40949730ced09cfec2ba837da31d11957cb
+Author: Daniel Berteaud <daniel@firewall-services.com>
+Date:   Thu May 2 01:42:16 2013 +0200
+
+    rename ban script to smeserver-fail2ban
+
+commit 242cdc05a3a994be1a9205eff44183b4e15a0243
+Author: Daniel Berteaud <daniel@firewall-services.com>
+Date:   Thu May 2 01:40:35 2013 +0200
+
+    Add a cleanup script to purge rules in case fail2ban lost them
+
+commit c5685730a7a29bfb83012528751a1c53f88e0eb9
+Author: Daniel Berteaud <daniel@firewall-services.com>
+Date:   Thu May 2 01:22:37 2013 +0200
+
+    Increase default ban time to 30 min
+
+commit fa462938fbf716a22b3c3902de307da6939d9923
+Author: Daniel Berteaud <daniel@firewall-services.com>
+Date:   Thu May 2 01:20:48 2013 +0200
+
+    expand fail2ban templates during bootstrap-console-save event
+
+commit 39337adf12c9811edd4b006e9fee91f29f71c328
+Author: Daniel Berteaud <daniel@firewall-services.com>
+Date:   Thu May 2 01:19:12 2013 +0200
+
+    Disable DNS reverse lookups
+
+commit bc6518ba96500fa869be7c6595a1a2f6ba446562
+Author: Daniel Berteaud <daniel@firewall-services.com>
+Date:   Thu May 2 01:15:52 2013 +0200
+
+    Add proto and port support in masq templates
+
+commit a99711dd02ef4f7cda80d3123a3b2c40338ed323
+Author: Daniel Berteaud <daniel@firewall-services.com>
+Date:   Mon Apr 29 12:15:26 2013 +0200
+
+    Send daemon logs to a dedicated file and add logrotate templates
+
+commit d1369db297c97d5ff9ac41de85fd32faacfd61fa
+Author: Daniel Berteaud <daniel@firewall-services.com>
+Date:   Mon Apr 29 11:51:28 2013 +0200
+
+    remove daemontools support, fail2ban doesn't play well with it because the daemon started standalone won't do anything before the client parse the config and send the param to the server
+
+commit b88a9b5f1a456693080f8b1f6f1014c833a562d3
+Author: Daniel Berteaud <daniel@firewall-services.com>
+Date:   Sun Apr 28 22:10:12 2013 +0200
+
+    Fix sections space
+
+commit d73e7df3378e5f2336fad1e0a5aa81aca24f7996
+Author: Daniel Berteaud <daniel@firewall-services.com>
+Date:   Sun Apr 28 22:08:21 2013 +0200
+
+    Reverse bad logic in FilterLocalNetworks
+
+commit df3190298ddd8a905821a8fdc29dafd4fb465bd2
+Author: Daniel Berteaud <daniel@firewall-services.com>
+Date:   Sun Apr 28 22:06:33 2013 +0200
+
+    various fixes in jail.conf templates
+
+commit 0b90b27eb871a2c94c8336c2b5dd61f1d185bc05
+Author: Daniel Berteaud <daniel@firewall-services.com>
+Date:   Sun Apr 28 21:43:50 2013 +0200
+
+    First commit

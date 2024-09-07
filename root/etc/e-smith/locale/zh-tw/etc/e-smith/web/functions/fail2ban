@@ -1,0 +1,196 @@
+<lexicon lang="zh-tw">
+    <entry>
+	<base>SERVICE_STATUS</base>
+	<trans>Fail2ban service status.</trans>
+    </entry>
+    <entry>
+	<base>STATUS</base>
+	<trans>狀態</trans>
+    </entry>
+    <entry>
+        <base>FilterLocalNetworks_STATUS</base>
+        <trans>Whitelist all the local network defined.</trans>
+    </entry>
+    <entry>
+        <base>FilterLocalNetworks</base>
+        <trans>FilterLocalNetworks status</trans>
+    </entry>
+    <entry>
+        <base>FilterValidRemoteHosts_STATUS</base>
+        <trans>Whitelist all the authorized remote hosts allowed to acces server-manager.</trans>
+    </entry>
+    <entry>
+        <base>FilterValidRemoteHosts</base>
+        <trans>FilterValidRemoteHosts status</trans>
+    </entry>
+    <entry>
+        <base>BANTIME</base>
+        <trans>Set the default ban time for jails (Initial default is 1800 seconds).</trans>
+    </entry>
+    <entry>
+        <base>DEFAULT_BANTIME</base>
+        <trans>Bantime</trans>
+    </entry>
+    <entry>
+        <base>FINDTIME</base>
+        <trans>>Set the default find time for jails (Initial default is 900 seconds).</trans>
+    </entry>
+    <entry>
+        <base>DEFAULT_FINDTIME</base>
+        <trans>Findtime</trans>
+    </entry>
+    <entry>
+        <base>MAXRETRY</base>
+        <trans>Set the default max retry allowed before being ban (Initial default is 3).</trans>
+    </entry>
+    <entry>
+        <base>DEFAULT_MAXRETRY</base>
+        <trans>Maxretry</trans>
+    </entry>
+    <entry>
+        <base>SSHD_STATUS</base>
+        <trans>Status of sshd jail.</trans>
+    </entry>
+    <entry>
+        <base>SSHD</base>
+        <trans>sshd</trans>
+    </entry>
+    <entry>
+        <base>QPSMTPD_STATUS</base>
+        <trans>Status of qpsmtpd (incoming emails) jail.</trans>
+    </entry>
+    <entry>
+        <base>QPSMTPD</base>
+        <trans>qpsmtpd</trans>
+    </entry>
+    <entry>
+        <base>IMAP_STATUS</base>
+        <trans>Status of dovecot (imap service to retrieve emails) jail.</trans>
+    </entry>
+    <entry>
+        <base>IMAP</base>
+        <trans>dovecot</trans>
+    </entry>
+    <entry>
+        <base>HTTPD_STATUS</base>
+        <trans>Status of httpd jails. Multiple features are enabled at once there.</trans>
+    </entry>
+    <entry>
+        <base>HTTPD</base>
+        <trans>httpd</trans>
+    </entry>
+    <entry>
+        <base>FTP_STATUS</base>
+        <trans>Status of proftpd jail.</trans>
+    </entry>
+    <entry>
+        <base>FTP</base>
+        <trans>proftpd</trans>
+    </entry>
+    <entry>
+        <base>LEMONLDAP_STATUS</base>
+        <trans>Status of LemonLDAP jail, if installed. Nothing is running if LemonLDAP is not installed or disabled.</trans>
+    </entry>
+    <entry>
+        <base>LEMONLDAP</base>
+        <trans>LemonLDAP</trans>
+    </entry>
+    <entry>
+        <base>EJABBERD_STATUS</base>
+        <trans>Status of ejabberd jail, if installed. Nothing is running if ejabberd is not installed or disabled.</trans>
+    </entry>
+    <entry>
+        <base>EJABBERD</base>
+        <trans>ejabberd</trans>
+    </entry>
+    <entry>
+        <base>SOGOD_STATUS</base>
+        <trans>Status of SOGO jail, if installed. Nothing is running if SOGO is not installed or disabled.</trans>
+    </entry>
+    <entry>
+        <base>SOGOD</base>
+        <trans>SOGO</trans>
+    </entry>
+    <entry>
+        <base>WORDPRESS_STATUS</base>
+        <trans>Status of wordpress jails. You need to activate it manually whether you have it in an ibay or use the contrib. Please also install the plugin in all your wordpress instances.</trans>
+    </entry>
+    <entry>
+        <base>WORDPRESS</base>
+        <trans>wordpress</trans>
+    </entry>
+    <entry>
+	<base>VALIDFROM_DESC</base>
+	<trans><![CDATA[ <hr class="sectionbar" /><h2>Allowed Hosts</h2> <p>This is a list of hosts that will not be blocked by fail2ban.</p> ]]></trans>
+    </entry>
+    <entry>
+	<base>NO_ENTRIES_YET</base>
+	<trans>尚無輸入</trans>
+    </entry>
+    <entry>
+	<base>DESC_ADD_IP</base>
+	<trans>To add a new allowed network, enter the details below.</trans>
+    </entry>
+    <entry>
+        <base>ADD_IP</base>
+        <trans>Authorized network</trans>
+    </entry>
+    <entry>
+        <base>DESC_ADD_BITS</base>
+        <trans>To add a new allowed network, enter the associated subnet using bits eg 22, 25 or 32).</trans>
+    </entry>
+    <entry>
+        <base>ADD_BITS</base>
+        <trans>Authorized network subnet</trans>
+    </entry>
+    <entry>
+	<base>CURRENT_DENY_DESC</base>
+	<trans><![CDATA[ <h2>Blocked Hosts</h2> <p>This is a list of hosts that are currently blocked. ]]></trans>
+    </entry>
+    <entry>
+	<base>FIRST_SEEN</base>
+	<trans>首次訪問的主機</trans>
+    </entry>
+    <entry>
+	<base>SUCCESS</base>
+	<trans>The new fail2ban settings have been saved.</trans>
+    </entry>
+    <entry>
+	<base>ERR_NO_RECORD</base>
+	<trans>Unable to locate fail2ban record in configuration db</trans>
+    </entry>
+    <entry>
+	<base>ERROR_STOPPING</base>
+	<trans>錯誤發生於試圖停止服務時</trans>
+    </entry>            
+    <entry>
+        <base>SUCCESS_IP</base>
+        <trans>The following IP has been unbanned</trans>
+    </entry>
+    <entry>
+        <base>SUCCESS_IP_WHITE</base>
+        <trans>The following IP has been unbanned and whitelisted</trans>
+    </entry>
+    <entry>
+        <base>ERROR_UPDATING</base>
+        <trans>Unable to unban</trans>
+    </entry>
+    <entry>
+        <base>ERROR_UPDATING_WHITE</base>
+        <trans>Unable to unban and whitelist</trans>
+    </entry>
+    <entry>
+        <base>ERR_EXISTS</base>
+        <trans>Error: IP already in whitelist</trans>
+    </entry>
+    <entry>
+        <base>SEND_MAIL_STATUS</base>
+        <trans>Send mail on ban</trans>
+    </entry>
+    <entry>
+        <base>EMAIL</base>
+        <trans>郵件刪除</trans>
+    </entry>
+
+
+</lexicon>
