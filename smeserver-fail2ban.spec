@@ -1,5 +1,5 @@
 %define version 0.1.18
-%define release 33
+%define release 34
 %define name smeserver-fail2ban
 
 Summary: fail2ban integration on SME Server
@@ -14,9 +14,9 @@ patch25: smeserver-fail2ban-0.1.18-locale-2024-09-05.patch
 
 BuildRoot: /var/tmp/%{name}-%{version}-%{release}-buildroot
 BuildArchitectures: noarch
-BuildRequires: e-smith-devtools
+BuildRequires: smeserver-devtools
 
-Requires: e-smith-base >= 5.2.0
+Requires: smeserver-base >= 5.2.0
 Requires: fail2ban-server, fail2ban-sendmail
 Requires: perl-Data-Validate-IP
 Obsoletes: fail2ban-firewalld, firewalld
@@ -26,6 +26,9 @@ AutoReqProv: no
 Configure fail2ban on SME Server
 
 %changelog
+* Sun Sep 08 2024 fix-e-smith-pkg.sh by Trevor Batley <trevor@batley.id.au> 0.1.18-34.sme
+- Fix e-smith references in smeserver-fail2ban [SME: 12732]
+
 * Sat Sep 07 2024 cvs2git.sh aka Brian Read <brianr@koozali.org> 0.1.18-33.sme
 - Roll up patches and move to git repo [SME: 12338]
 
