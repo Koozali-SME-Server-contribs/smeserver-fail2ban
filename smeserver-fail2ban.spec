@@ -1,5 +1,5 @@
 %define version 0.1.18
-%define release 34
+%define release 35
 %define name smeserver-fail2ban
 
 Summary: fail2ban integration on SME Server
@@ -26,6 +26,9 @@ AutoReqProv: no
 Configure fail2ban on SME Server
 
 %changelog
+* Tue Sep 23 2025 Brian Read <brianr@koozali.org> 0.1.18-35.sme
+- Change $config to config in layout file(s) [SME: 13171]
+
 * Sun Sep 08 2024 fix-e-smith-pkg.sh by Trevor Batley <trevor@batley.id.au> 0.1.18-34.sme
 - Fix e-smith references in smeserver-fail2ban [SME: 12732]
 
