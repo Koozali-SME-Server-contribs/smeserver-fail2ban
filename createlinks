@@ -3,10 +3,9 @@
 use esmith::Build::CreateLinks qw(:all);
 
 # Koozali event specific for updating with yum without reboot
-$event = "smeserver-fail2ban-update";
-#add here the path to your templates needed to expand
-#see the /etc/systemd/system-preset/49-koozali.preset should be present for systemd integration on all you yum update event
+my $event = "smeserver-fail2ban-update";
 
+#add here the path to your templates needed to expand
 foreach my $file (qw(
                 /etc/systemd/system-preset/49-koozali.preset
 		/etc/backup-data.d/smeserver-fail2ban.include
@@ -21,22 +20,30 @@ event_link("systemd-default", $event, "10");
 event_link("systemd-reload", $event, "50");
 
 #action specific to this package
-#event_link("some event", $event, "30");
 #services we need to restart
 safe_symlink("restart", "root/etc/e-smith/events/$event/services2adjust/masq");
 safe_symlink("restart", "root/etc/e-smith/events/$event/services2adjust/fail2ban");
-#and Server Manager panel link
 
+#and Server Manager panel link
 panel_link("fail2ban", "manager");
 
 templates2events("/etc/rc.d/init.d/masq", "fail2ban-update");
 templates2events("/etc/rc.d/init.d/masq", "smeserver-fail2ban-update");
 
-foreach my $event qw(smeserver-fail2ban-update fail2ban-conf bootstrap-console-save){
+# for smanager2
+safe_symlink('restart', "root/etc/e-smith/events/$event/services2adjust/smanager");
+event_link('navigation2-conf', "$event", '80');
+event_link('routes2-conf', "$event", '80');
+event_link('locales2-conf', "$event", '80');
+
+
+# other events
+foreach my $event (qw(smeserver-fail2ban-update fail2ban-conf bootstrap-console-save)) {
     templates2events("/etc/fail2ban/jail.conf", "$event");
     templates2events("/etc/fail2ban/fail2ban.conf", "$event");
     templates2events("/etc/logrotate.d/fail2ban", "$event");
 }
+
 templates2events("/etc/fail2ban/jail.conf", "network-create");
 templates2events("/etc/fail2ban/jail.conf", "network-delete");
 templates2events("/etc/fail2ban/jail.conf", "remoteaccess-update");
@@ -47,16 +54,5 @@ safe_symlink("restart", "root/etc/e-smith/events/network-delete/services2adjust/
 safe_symlink("restart", "root/etc/e-smith/events/remoteaccess-update/services2adjust/fail2ban");
 event_link("fail2ban-suspend-logs", "logrotate", "02");
 event_link("fail2ban-resume-logs", "logrotate", "98");
-
 safe_touch("root/var/log/fail2ban/daemon.log");
 
-#service_link_enhanced("fail2ban", "S99", "7");
-#service_link_enhanced("fail2ban", "K08", "6");
-#service_link_enhanced("fail2ban", "K08", "0");
-
-# for smeserver-manager
-my $event = "smeserver-fail2ban-update"; 
-safe_symlink('restart', "root/etc/e-smith/events/$event/services2adjust/smanager");
-event_link('navigation2-conf', "$event", '80');
-event_link('routes2-conf', "$event", '80');
-event_link('locales2-conf', "$event", '80');

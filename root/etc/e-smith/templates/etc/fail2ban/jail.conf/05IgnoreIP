@@ -6,7 +6,10 @@ use Net::IPv4Addr;
 my $n = esmith::NetworksDB->open_ro() ||
   die "Couldn't open networks DB\n";
 
-my @ip = ("127.0.0.0/8", $LocalIP);
+# do not block localhost and LAN
+my @ip = ("127.0.0.0/8", "$LocalIP/32");
+# if ExternalIP exist do not block WAN
+push @ip, "$ExternalIP/32" if $ExternalIP;
 
 # Add hosts which can access the server-manager to the whitelist
 unless (($fail2ban{FilterValidRemoteHosts} || 'disabled') eq 'enabled'){
@@ -28,6 +31,7 @@ unless (($fail2ban{FilterLocalNetworks} || 'disabled') eq 'enabled'){
 # Add a local whitelist
 foreach (split /[,;]/, ($fail2ban{'IgnoreIP'} || '')){
     my $addr = $_;
+    next unless (length $addr);
     $addr .= '/32' unless ($addr =~ m/\/\d{1,2}$/);
     my ($ip,$bits) = Net::IPv4Addr::ipv4_parse("$addr");
     push @ip, "$ip/$bits";

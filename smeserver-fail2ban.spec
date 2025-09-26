@@ -1,5 +1,5 @@
 %define version 0.1.18
-%define release 35
+%define release 36
 %define name smeserver-fail2ban
 
 Summary: fail2ban integration on SME Server
@@ -10,7 +10,6 @@ Epoch: 9
 License: GPL
 Group: Networking/Daemons
 Source: %{name}-%{version}.tar.xz
-patch25: smeserver-fail2ban-0.1.18-locale-2024-09-05.patch
 
 BuildRoot: /var/tmp/%{name}-%{version}-%{release}-buildroot
 BuildArchitectures: noarch
@@ -26,6 +25,14 @@ AutoReqProv: no
 Configure fail2ban on SME Server
 
 %changelog
+* Fri Sep 26 2025 Jean-Philippe Pialasse <jpp@koozali.org> 0.1.18-36.sme
+- fix spec file [SME: 13172]
+- fix 05IgnoreIP fragment [SME: 12453]
+- whitelist wan ip [SME: 12199]
+- create Fail2ban chain if missing on reloading firewall  [SME: 10786]
+- update qpsmtpd logs path
+- fix createlinks
+
 * Tue Sep 23 2025 Brian Read <brianr@koozali.org> 0.1.18-35.sme
 - Change $config to config in layout file(s) [SME: 13171]
 

@@ -1,6 +1,21 @@
 {
     my $f2bdb = esmith::ConfigDB->open_ro('fail2ban') ||
         esmith::ConfigDB->create('fail2ban');
+
+   # to allow reload  without locking  just after initial install or if chain has been deleted
+   $OUT .=<<'EOF';
+   iptables -n --list Fail2Ban >/dev/null 2>&1
+   test=$?
+   if [[ $test -eq 1 ]] ; then
+   # A blacklist chain for xtables-addons Fail2Ban
+    /sbin/iptables --new-chain Fail2Ban
+    /sbin/iptables --new-chain Fail2Ban_1
+    /sbin/iptables --append Fail2Ban -j Fail2Ban_1
+    /sbin/iptables --insert INPUT 1 \
+       -j Fail2Ban
+   fi
+EOF
+
     # Find the current Fail2Ban_$$ chain, and create a new one.
     $OUT .=<<'EOF';
     OLD_Fail2Ban=$(get_safe_id Fail2Ban filter find)
