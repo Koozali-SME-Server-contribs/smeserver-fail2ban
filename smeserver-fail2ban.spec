@@ -1,5 +1,5 @@
 %define version 0.1.18
-%define release 36
+%define release 37
 %define name smeserver-fail2ban
 
 Summary: fail2ban integration on SME Server
@@ -25,6 +25,10 @@ AutoReqProv: no
 Configure fail2ban on SME Server
 
 %changelog
+* Tue Sep 30 2025 Jean-Philippe Pialasse <jpp@koozali.org> 0.1.18-37.sme
+- fix typo for uqpsmtpd [SME: 13172]
+- fix smanager filter [SME: 13206]
+
 * Fri Sep 26 2025 Jean-Philippe Pialasse <jpp@koozali.org> 0.1.18-36.sme
 - fix spec file [SME: 13172]
 - fix 05IgnoreIP fragment [SME: 12453]
