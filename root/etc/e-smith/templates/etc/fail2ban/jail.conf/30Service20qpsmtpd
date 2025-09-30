@@ -8,7 +8,7 @@ push @ports, ($qpsmtpd{'TCPPort'} || '25');
 push @ports, ($sqpsmtpd{'TCPPort'} || '465')
   if (($sqpsmtpd{'status'} || 'disabled') eq 'enabled');
 push @ports, ($uqpsmtpd{'TCPPort'} || '587')
-  if (($usqpsmtpd{'status'} || 'disabled') eq 'enabled');
+  if (($uqpsmtpd{'status'} || 'disabled') eq 'enabled');
 my $port = join (",", @ports);
 
 my $max = $maxretry*3;
