@@ -1,5 +1,5 @@
 %define version 0.1.18
-%define release 39
+%define release 40
 %define name smeserver-fail2ban
 
 Summary: fail2ban integration on SME Server
@@ -25,6 +25,9 @@ AutoReqProv: no
 Configure fail2ban on SME Server
 
 %changelog
+* Sat Oct 04 2025 Brian Read <brianr@koozali.org> 0.1.18-40.sme
+- Remove smanager-refresh from spec file [SME: 13212]
+
 * Wed Oct 01 2025 Jean-Philippe Pialasse <jpp@koozali.org> 0.1.18-39.sme
 - fix path to logfile for smanager [SME: 13206]
 
@@ -242,10 +245,6 @@ rm -rf $RPM_BUILD_ROOT
 
 %post
 
-if (systemctl list-unit-files |grep smanager) then
-  echo "Smanager restart in spec file"
-  /sbin/e-smith/signal-event smanager-refresh;
-fi
 
 
 %preun
