@@ -26,7 +26,7 @@ use Data::Validate::IP;
 
 use SrvMngr qw( theme_list init_session ip_number );
 
-our $cdb = esmith::ConfigDB->open() or die "Couldn't open ConfigDB\n";
+my $cdb;
 
 my %defaultval=('FilterLocalNetworks'=> "enabled",
 	'FilterValidRemoteHosts'=> "enabled",
@@ -51,6 +51,7 @@ sub main {
 
     my $c = shift;
     $c->app->log->info($c->log_req);
+	$cdb = esmith::ConfigDB::UTF8->open() or die "Couldn't open ConfigDB::UTF8\n";
 
     my %f2b_datas = ();
     my $title = $c->l('f2b_FORM_TITLE');
@@ -83,6 +84,7 @@ sub do_action {
 
     my $c = shift;
     $c->app->log->info($c->log_req);
+	$cdb = esmith::ConfigDB::UTF8->open() or die "Couldn't open ConfigDB::UTF8\n";
 
     my $rt = $c->current_route;
 
@@ -138,6 +140,7 @@ sub do_action_get {
 
     my $c = shift;
     $c->app->log->info($c->log_req);
+	$cdb = esmith::ConfigDB::UTF8->open() or die "Couldn't open ConfigDB::UTF8\n";
 
     my ($res, $result) = '';
 
@@ -195,6 +198,7 @@ sub do_changes {
 
     my $c = shift;
     my %conf;
+	$cdb = esmith::ConfigDB::UTF8->open() or die "Couldn't open ConfigDB::UTF8\n";
 
     # Don't process the form unless we clicked the Save button. The event is
     # called even if we chose the Remove link or the Add link.
@@ -272,6 +276,7 @@ sub do_changes {
 	return $c->l('f2b_ERROR_UPDATING');
     }
 
+	$cdb = esmith::ConfigDB::UTF8->open() or die "Couldn't open ConfigDB::UTF8\n";
     if ( $rec->prop('status') eq 'disabled' ) {
         unless ( `/etc/init.d/fail2ban stop`  ) {
 	    return $c->l('f2b_ERROR_STOPPING');
@@ -427,7 +432,7 @@ sub get_valid_from {
 
     my $rec = $cdb->get('fail2ban');
     if ( $rec ) {
-        my @vals = (split ',', $rec->prop('IgnoreIP'));
+        my @vals = (split ',', $rec->prop('IgnoreIP') // '');
    	 @vals_sorted = sort ip_sort @vals if @vals;
 #	@vals_sorted = @vals;
     }
@@ -452,4 +457,3 @@ sub ip_sort(@) {
 
 
 1;
-

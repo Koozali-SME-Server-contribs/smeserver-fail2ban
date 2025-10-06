@@ -1,5 +1,5 @@
 %define version 0.1.18
-%define release 40
+%define release 41
 %define name smeserver-fail2ban
 
 Summary: fail2ban integration on SME Server
@@ -25,6 +25,9 @@ AutoReqProv: no
 Configure fail2ban on SME Server
 
 %changelog
+* Sun Oct 05 2025 Brian Read <brianr@koozali.org> 0.1.18-41.sme
+- Add UTF8 and avoid potential DB caching problems [SME: 13209]
+
 * Sat Oct 04 2025 Brian Read <brianr@koozali.org> 0.1.18-40.sme
 - Remove smanager-refresh from spec file [SME: 13212]
 
