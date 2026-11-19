@@ -1,5 +1,5 @@
 %define version 0.1.18
-%define release 44
+%define release 45
 %define name smeserver-fail2ban
 
 Summary: fail2ban integration on SME Server
@@ -25,6 +25,9 @@ AutoReqProv: no
 Configure fail2ban on SME Server
 
 %changelog
+* Thu Nov 19 2026 Jean-Philippe Pialasse <jpp@koozali.org> 0.1.18-45.sme
+- only ban sshd port, not all for sshd jail [SME: 13841]
+
 * Wed Nov 18 2026 Jean-Philippe Pialasse <jpp@koozali.org> 0.1.18-44.sme
 - backup sqlite in /var/lib/fail2ban/ [SME: 13842]
 
