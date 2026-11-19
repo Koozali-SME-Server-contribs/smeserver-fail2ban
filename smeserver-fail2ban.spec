@@ -27,7 +27,6 @@ Configure fail2ban on SME Server
 %changelog
 * Thu Nov 19 2026 Brian Read <brianr@koozali.org> 0.1.18-46.sme
 - Split SM2 panel into two tabs  [SME: 13844]
-- Fix socket reference in service file [SME: 13845]
 
 * Thu Nov 19 2026 Jean-Philippe Pialasse <jpp@koozali.org> 0.1.18-45.sme
 - only ban sshd port, not all for sshd jail [SME: 13841]
