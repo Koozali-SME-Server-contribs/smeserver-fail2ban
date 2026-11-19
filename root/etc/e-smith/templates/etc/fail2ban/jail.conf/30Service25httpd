@@ -14,7 +14,7 @@ $OUT .=<<"EOF";
 enabled  = true
 filter   = apache-overflows
 logpath  = /var/log/httpd/error_log
-action   = smeserver-iptables[port="$port",protocol=tcp,bantime=$bantime]
+action   = smeserver-ipset-port[ipmset=f2b-ports, port="$port", protocol=tcp, bantime=$bantime, ipsettime=<timeout-bantime>]
 EOF
 
 $OUT .= "           smeserver-sendmail[name=\"Apache (overflows)\",dest=$maildest]\n"
@@ -26,7 +26,7 @@ $OUT .=<<"EOF";
 enabled  = true
 filter   = apache-noscript
 logpath  = /var/log/httpd/error_log
-action   = smeserver-iptables[port="$port",protocol=tcp,bantime=$bantime]
+action   = smeserver-ipset-port[ipmset=f2b-ports, port="$port", protocol=tcp, bantime=$bantime, ipsettime=<timeout-bantime>]
 EOF
 
 $OUT .= "           smeserver-sendmail[name=\"Apache (noscript)\",dest=$maildest]\n"
@@ -38,7 +38,7 @@ $OUT .=<<"EOF";
 enabled  = true
 filter   = apache-scan
 logpath  = /var/log/httpd/error_log
-action   = smeserver-iptables[port="$port",protocol=tcp,bantime=$bantime]
+action   = smeserver-ipset-port[ipmset=f2b-ports, port="$port", protocol=tcp, bantime=$bantime, ipsettime=<timeout-bantime>]
 EOF
 
 $OUT .= "           smeserver-sendmail[name=\"Apache (scan)\",dest=$maildest]\n"
@@ -50,7 +50,7 @@ $OUT .=<<"EOF";
 enabled  = true
 filter   = apache-auth
 logpath  = /var/log/httpd/error_log
-action   = smeserver-iptables[port="$port",protocol=tcp,bantime=$bantime]
+action   = smeserver-ipset-port[ipmset=f2b-ports, port="$port", protocol=tcp, bantime=$bantime, ipsettime=<timeout-bantime>]
 EOF
 
 $OUT .= "           smeserver-sendmail[name=\"Apache (auth)\",dest=$maildest]\n"
@@ -62,7 +62,7 @@ $OUT .=<<"EOF";
 enabled  = true
 filter   = apache-badbots
 logpath  = /var/log/httpd/access_log
-action   = smeserver-iptables[port="$port",protocol=tcp,bantime=$bantime]
+action   = smeserver-ipset-port[ipmset=f2b-ports, port="$port", protocol=tcp, bantime=$bantime, ipsettime=<timeout-bantime>]
 EOF
 
 $OUT .= "           smeserver-sendmail[name=\"Apache (badbots)\",dest=$maildest]\n"
@@ -74,7 +74,7 @@ $OUT .=<<"EOF";
 enabled  = true
 filter   = apache-shellshock
 logpath  = /var/log/httpd/error_log
-action   = smeserver-iptables[port="$port",protocol=tcp,bantime=$bantime]
+action   = smeserver-ipset-port[ipmset=f2b-ports, port="$port", protocol=tcp, bantime=$bantime, ipsettime=<timeout-bantime>]
 EOF
 
 $OUT .= "           smeserver-sendmail[name=\"Apache (shellshock)\",dest=$maildest]\n"
@@ -86,7 +86,7 @@ $OUT .=<<"EOF";
 enabled  = true
 filter   = apache-fakegooglebot
 logpath  = /var/log/httpd/error_log
-action   = smeserver-iptables[port="$port",protocol=tcp,bantime=$bantime]
+action   = smeserver-ipset-port[ipmset=f2b-ports, port="$port", protocol=tcp, bantime=$bantime, ipsettime=<timeout-bantime>]
 EOF
 
 $OUT .= "           smeserver-sendmail[name=\"Apache (fakegooglebot)\",dest=$maildest]\n"

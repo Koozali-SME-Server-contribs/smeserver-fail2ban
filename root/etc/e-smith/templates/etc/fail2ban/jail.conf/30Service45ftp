@@ -12,7 +12,7 @@ $OUT .=<<"EOF";
 enabled  = true
 filter   = proftpd
 logpath  = /var/log/secure
-action   = smeserver-iptables[port="$port",protocol=tcp,bantime=$bantime]
+action   = smeserver-ipset-port[ipmset=f2b-ports, port="$port", protocol=tcp, bantime=$bantime, ipsettime=<timeout-bantime>]
 EOF
 
 $OUT .= "           smeserver-sendmail[name=\"FTP\",dest=$maildest]\n"

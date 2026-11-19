@@ -15,7 +15,7 @@ logpath  = /var/log/smanager/smanager.log
 maxretry = 3
 findtime = 300
 bantime  = 1800
-action   = smeserver-iptables[port="$port",protocol=tcp,bantime=$bantime]
+action   = smeserver-ipset-port[ipmset=f2b-ports, port="$port", protocol=tcp, bantime=$bantime, ipsettime=<timeout-bantime>]
 
 EOF
 

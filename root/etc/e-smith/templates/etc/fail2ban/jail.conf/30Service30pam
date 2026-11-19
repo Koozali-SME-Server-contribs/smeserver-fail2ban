@@ -4,7 +4,7 @@ enabled  = true
 filter   = pam-generic
 logpath  = /var/log/secure
 maxretry = {$maxretry*2}
-action   = smeserver-iptables[bantime={"$bantime"}]
+action   = iptables-ipset[ipmset=f2b-default, bantime={$bantime}, ipsettime=<timeout-bantime>, actionstart="", actionstop=""] 
 {
 $OUT .= "           smeserver-sendmail[name=\"PAM generic\",dest=$maildest]\n"
     if ($mail eq 'enabled');

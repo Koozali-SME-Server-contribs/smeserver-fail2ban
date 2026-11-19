@@ -14,6 +14,20 @@
     /sbin/iptables --insert INPUT 1 \
        -j Fail2Ban
    fi
+
+   # 1. create ipset if not already existing blocking ip (recidive, ssh, scanner ...)
+   /usr/sbin/ipset create f2b-default hash:ip timeout 3600 maxelem 200000 -exist
+   /sbin/iptables -C Fail2Ban -m set --match-set f2b-default src -j denylog >/dev/null 2>&1
+   if [[ $? -ne 0 ]] ; then
+       /sbin/iptables --append Fail2Ban -m set --match-set f2b-default src -j denylog
+   fi
+   # 2. create ipset per port (imap, smtp, etc...)
+   /usr/sbin/ipset create f2b-ports hash:ip,port timeout 3600 maxelem 200000 -exist
+   /sbin/iptables -C Fail2Ban -m set --match-set f2b-ports src,dst -j denylog >/dev/null 2>&1
+   if [[ $? -ne 0 ]] ; then
+       /sbin/iptables --append Fail2Ban -m set --match-set f2b-ports src,dst -j denylog
+   fi
+
 EOF
 
     # Find the current Fail2Ban_$$ chain, and create a new one.

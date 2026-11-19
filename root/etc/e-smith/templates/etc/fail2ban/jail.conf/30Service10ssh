@@ -10,7 +10,7 @@ $OUT .=<<"EOF";
 enabled  = true
 filter   = sshd
 logpath  = /var/log/sshd/sshd.log
-action   = smeserver-iptables[port="$port",protocol=tcp,bantime=$bantime]
+action   = iptables-ipset[ipmset=f2b-default, bantime=$bantime, ipsettime=<timeout-bantime>, actionstart="", actionstop=""]
 EOF
 
 $OUT .= "           smeserver-sendmail[name=\"SSH\",dest=$maildest]\n"
@@ -22,7 +22,7 @@ $OUT .=<<"EOF";
 enabled  = true
 filter   = sshd-ddos
 logpath  = /var/log/sshd/sshd.log
-action   = smeserver-iptables[port="$port",protocol=tcp,bantime=$bantime]
+action   = iptables-ipset[ipmset=f2b-default, bantime=$bantime, ipsettime=<timeout-bantime>, actionstart="", actionstop=""]
 EOF
 
 $OUT .= "           smeserver-sendmail[name=\"SSH\",dest=$maildest]\n"

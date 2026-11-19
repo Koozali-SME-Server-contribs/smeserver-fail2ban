@@ -1,5 +1,5 @@
 %define version 0.1.18
-%define release 42
+%define release 43
 %define name smeserver-fail2ban
 
 Summary: fail2ban integration on SME Server
@@ -25,6 +25,9 @@ AutoReqProv: no
 Configure fail2ban on SME Server
 
 %changelog
+* Wed Nov 18 2026 Jean-Philippe Pialasse <jpp@koozali.org> 0.1.18-43.sme
+- use ipset instead of reloading masq on ban unban [SME: 13841]
+
 * Tue Jul 21 2026 Jean-Philippe Pialasse <jpp@koozali.org> 0.1.18-42.sme
 - fix (u|q|)qpsmtpd regex for syslog format [SME: 8955]
 

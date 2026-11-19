@@ -8,15 +8,19 @@ push @ports, ($imap{'TCPPort'} || '143')
     if (($imap{'status'} || 'disabled') eq 'enabled');
 push @ports, ($imaps{'TCPPort'} || '993')
     if (($imaps{'status'} || 'disabled') eq 'enabled');
+push @ports, ($pop{'TCPPort'} || '110')
+    if (($pop{'status'} || 'disabled') eq 'enabled');
+push @ports, ($pops{'TCPPort'} || '995')
+    if (($pops{'status'} || 'disabled') eq 'enabled');
 my $port = join (",", @ports);
 
 $OUT .=<<"EOF";
 
-[imap]
+[dovecot]
 enabled  = true
 filter   = dovecot
 logpath  = /var/log/dovecot/dovecot.log
-action   = smeserver-iptables[port="$port",protocol=tcp,bantime=$bantime]
+action   = smeserver-ipset-port[ipmset=f2b-ports, port="$port", protocol=tcp, bantime=$bantime, ipsettime=<timeout-bantime>]
 EOF
 
 $OUT .= "           smeserver-sendmail[name=\"Dovecot\",dest=$maildest]\n"
