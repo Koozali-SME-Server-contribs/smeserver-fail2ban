@@ -21,9 +21,6 @@ use SrvMngr::I18N;
 
 use Data::Validate::IP;
 
-#use esmith::FormMagick::Panel::fail2ban;
-#    qw( get_value get_prop change_settings RemoveIP );
-
 use SrvMngr qw( theme_list init_session ip_number );
 
 my $cdb;

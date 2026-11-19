@@ -2,7 +2,22 @@
 loglevel = INFO
 logtarget = /var/log/fail2ban/daemon.log
 syslogsocket = auto
-socket = /var/run/fail2ban/fail2ban.sock
-pidfile = /var/run/fail2ban/fail2ban.pid
+socket = /run/fail2ban/fail2ban.sock
+pidfile = /run/fail2ban/fail2ban.pid
 dbfile = /var/lib/fail2ban/fail2ban.sqlite3
-dbpurgeage = 604800
+dbpurgeage = {
+    my $rbantime = $fail2ban{'RecidiveBanTime'} || '604800';
+    my $bantime  = $fail2ban{'BanTime'} || '1800';
+
+    my $dbpurgeage = 604800;
+
+    my $max_ban = 0;
+    $max_ban = $rbantime if ($rbantime > 0 && $rbantime > $max_ban);
+    $max_ban = $bantime  if ($bantime  > 0 && $bantime  > $max_ban);
+
+    if (($max_ban * 2) > $dbpurgeage) {
+        $dbpurgeage = $max_ban * 2;
+    }
+
+    $OUT = "$dbpurgeage";
+}

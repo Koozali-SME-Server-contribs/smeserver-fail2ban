@@ -1,5 +1,5 @@
 %define version 0.1.18
-%define release 46
+%define release 47
 %define name smeserver-fail2ban
 
 Summary: fail2ban integration on SME Server
@@ -25,6 +25,12 @@ AutoReqProv: no
 Configure fail2ban on SME Server
 
 %changelog
+* Thu Nov 19 2026 Jean-Philippe Pialasse <jpp@koozali.org> 0.1.18-47.sme
+- fix pid path [SME: 13845]
+- fix db purge time [SME: 13846]
+- remove sm1 panel and move translation [SME: 13348]
+- remove reference to formmagick [SME 13632]
+
 * Thu Nov 19 2026 Brian Read <brianr@koozali.org> 0.1.18-46.sme
 - Split SM2 panel into two tabs  [SME: 13844]
 
