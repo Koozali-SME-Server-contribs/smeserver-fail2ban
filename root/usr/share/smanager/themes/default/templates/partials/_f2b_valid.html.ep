@@ -1,5 +1,5 @@
 <div id="f2b_valid">
-    <hr class='sectionbar' /><h2>
+    <h2>
     %=l 'f2b_VALIDFROM_TITLE'
     </h2><p>
     %=l 'f2b_VALIDFROM_DESC'

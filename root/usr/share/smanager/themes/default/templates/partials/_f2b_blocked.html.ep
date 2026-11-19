@@ -1,5 +1,5 @@
 <div id="f2b_blocked">
-    <hr class='sectionbar' /><h2>
+    <h2>
     %=l 'f2b_CURRENT_DENY_TITLE'
     </h2><p>
     %=l 'f2b_CURRENT_DENY_DESC'

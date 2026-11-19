@@ -1,0 +1,59 @@
+/* --- Fail2ban panel tabs (style mirrors the dnf panel) --- */
+
+.is-hidden { display: none !important; }
+
+.f2b-tabs {
+  display: flex;
+  gap: 0.25rem;
+  align-items: flex-end;
+  border-bottom: 1px solid #b9bcc2;
+  margin: 0 0 0 0;
+  padding: 0;
+  position: relative;
+  z-index: 10;            /* keep tabs above tabpanel content */
+}
+
+.f2b-tab {
+  appearance: none;
+  border: 1px solid #b9bcc2;
+  border-bottom: none;
+  background: #e8f3e1; /*#eef0f3*/
+  color: #222;
+  padding: 0.45rem 0.85rem;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  line-height: 1.1;
+}
+
+.f2b-tab:hover {
+  background: #e4e7ec;
+}
+
+.f2b-tab.is-active {
+  background: #fff;
+  font-weight: 600;
+  position: relative;
+  top: 1px;              /* visually connects active tab to panel */
+  border-color: #9aa0aa;
+}
+
+/* --- Tab panels --- */
+.f2b-tabpanels {
+  background: #fff;
+  border: 1px solid #b9bcc2;
+  border-top: none;        /* active tab replaces the top border visually */
+  padding: 0.85rem;
+  margin-bottom: 0.75rem;
+  position: relative;
+  z-index: 1;
+}
+
+.f2b-tabpanel.is-hidden {
+  display: none;
+}
+
+.f2b-actions {
+  margin-top: 0.85rem;
+}
