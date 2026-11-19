@@ -1,4 +1,5 @@
 #Only non rpm owned files are backupe there
+/var/lib/fail2ban/
 {
 use RPM2;
 my $rpm_db = RPM2->open_rpm_db();
