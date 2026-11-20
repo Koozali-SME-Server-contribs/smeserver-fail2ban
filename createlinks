@@ -24,9 +24,6 @@ event_link("systemd-reload", $event, "50");
 safe_symlink("restart", "root/etc/e-smith/events/$event/services2adjust/masq");
 safe_symlink("restart", "root/etc/e-smith/events/$event/services2adjust/fail2ban");
 
-#and Server Manager panel link
-panel_link("fail2ban", "manager");
-
 templates2events("/etc/rc.d/init.d/masq", "fail2ban-update");
 templates2events("/etc/rc.d/init.d/masq", "smeserver-fail2ban-update");
 

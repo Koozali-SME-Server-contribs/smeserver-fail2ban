@@ -77,133 +77,173 @@
                role="tabpanel"
                aria-labelledby="f2b-tab-config">
 
-        <p>
-        %=l('f2b_SERVICE_STATUS')
-        <br><span class=label>
-        %=l 'f2b_STATUS'
-        </span><span class=input>
-        % param 'Status' => $f2b_datas->{status} unless param 'Status';
-        %= select_field 'Status' => [[(l 'DISABLED') => 'disabled'], [(l 'ENABLED') => 'enabled']], class => 'input'
-        </span></p>
-        <p>
-        %=l('f2b_FilterLocalNetworks_STATUS')
-        <br><span class=label>
-        %=l 'f2b_FilterLocalNetworks'
-        </span><span class=input>
-        % param 'FilterLocalNetworks' => $f2b_datas->{filterlocalnetworks} unless param 'FilterLocalNetworks';
-        %= select_field 'FilterLocalNetworks' => [[(l 'DISABLED') => 'disabled'], [(l 'ENABLED') => 'enabled']], class => 'input'
-        </span></p>
-        <p>
-        %=l('f2b_FilterValidRemoteHosts_STATUS')
-        <br><span class=label>
-        %=l 'f2b_FilterValidRemoteHosts'
-        </span><span class=input>
-        % param 'FilterValidRemoteHosts' => $f2b_datas->{filtervalidremotehosts} unless param 'FilterValidRemoteHosts';
-        %= select_field 'FilterValidRemoteHosts' => [[(l 'DISABLED') => 'disabled'], [(l 'ENABLED') => 'enabled']], class => 'input'
-        </span></p>
-        <p>
-        %=l('f2b_SEND_MAIL_STATUS')
-        <br><span class=label>
-        %=l 'f2b_MAIL'
-        </span><span class=input>
-        % param 'Mail' => $f2b_datas->{mail} unless param 'Mail';
-        %= select_field 'Mail' => [[(l 'DISABLED') => 'disabled'], [(l 'ENABLED') => 'enabled']], class => 'input'
-        </span></p>
-        <p><span class=label>
-        %=l 'f2b_DEFAULT_BANTIME'
-        </span><span class=input>
-        % param 'BanTime' => $f2b_datas->{bantime} unless param 'BanTime';
-        %= text_field 'BanTime', size => '9', class => 'input'
-        </span><span class=label2>
-        %=l 'f2b_DEFAULT_FINDTIME'
-        </span><span class=input>
-        % param 'FindTime' => $f2b_datas->{findtime} unless param 'FindTime';
-        %= text_field 'FindTime', size => '6', class => 'input'
-        </span><span class=label2>
-        %=l 'f2b_DEFAULT_MAXRETRY'
-        </span><span class=input>
-        % param 'MaxRetry' => $f2b_datas->{maxretry} unless param 'MaxRetry';
-        %= text_field 'MaxRetry', size => '2', class => 'input'
-        </span></p>
-        <p>
-        %=l('f2b_SSHD_STATUS')
-        <br><span class=label>
-        %=l 'f2b_SSHD'
-        </span><span class=input>
-        % param 'Sshd' => $f2b_datas->{sshd} unless param 'Sshd';
-        %= select_field 'Sshd' => [[(l 'DISABLED') => 'disabled'], [(l 'ENABLED') => 'enabled']], class => 'input'
-        </span></p><p>
-        %=l('f2b_QPSMTPD_STATUS')
-        <br><span class=label>
-        %=l 'f2b_QPSMTPD'
-        </span><span class=input>
-        % param 'Qpsmtpd' => $f2b_datas->{qpsmtpd} unless param 'Qpsmtpd';
-        %= select_field 'Qpsmtpd' => [[(l 'DISABLED') => 'disabled'], [(l 'ENABLED') => 'enabled']], class => 'input'
-        </span></p>
-        <p>
-        %=l('f2b_IMAP_STATUS')
-        <br><span class=label>
-        %=l 'f2b_IMAP'
-        </span><span class=input>
-        % param 'Dovecot' => $f2b_datas->{dovecot} unless param 'Dovecot';
-        %= select_field 'Dovecot' => [[(l 'DISABLED') => 'disabled'], [(l 'ENABLED') => 'enabled']], class => 'input'
-        </span></p>
-        <p>
-        %=l('f2b_HTTPD_STATUS')
-        <br><span class=label>
-        %=l 'f2b_HTTPD'
-        </span><span class=input>
-        % param 'Httpd-e-smith' => $f2b_datas->{'httpd-e-smith'} unless param 'Httpd-e-smith';
-        %= select_field 'Httpd-e-smith' => [[(l 'DISABLED') => 'disabled'], [(l 'ENABLED') => 'enabled']], class => 'input'
-        </span></p>
-        <p>
-        %=l('f2b_FTP_STATUS')
-        <br><span class=label>
-        %=l 'f2b_FTP'
-        </span><span class=input>
-        % param 'Ftp' => $f2b_datas->{ftp} unless param 'Ftp';
-        %= select_field 'Ftp' => [[(l 'DISABLED') => 'disabled'], [(l 'ENABLED') => 'enabled']], class => 'input'
-        </span></p>
-        <p>
-        %=l('f2b_LEMONLDAP_STATUS')
-        <br><span class=label>
-        %=l 'f2b_LEMONLDAP'
-        </span><span class=input>
-        % param 'Lemonldap' => $f2b_datas->{lemonldap} unless param 'Lemonldap';
-        %= select_field 'Lemonldap' => [[(l 'DISABLED') => 'disabled'], [(l 'ENABLED') => 'enabled']], class => 'input'
-        </span></p>
-        <p>
-        %=l('f2b_EJABBERD_STATUS')
-        <br><span class=label>
-        %=l 'f2b_EJABBERD'
-        </span><span class=input>
-        % param 'Ejabberd' => $f2b_datas->{ejabberd} unless param 'Ejabberd';
-        %= select_field 'Ejabberd' => [[(l 'DISABLED') => 'disabled'], [(l 'ENABLED') => 'enabled']], class => 'input'
-        </span></p>
-        <p>
-        %=l('f2b_SOGOD_STATUS')
-        <br><span class=label>
-        %=l 'f2b_SOGOD'
-        </span><span class=input>
-        % param 'Sogod' => $f2b_datas->{sogod} unless param 'Sogod';
-        %= select_field 'Sogod' => [[(l 'DISABLED') => 'disabled'], [(l 'ENABLED') => 'enabled']], class => 'input'
-        </span></p>
-        <p>
-        %=l('f2b_WORDPRESS_STATUS')
-        <br><span class=label>
-        %=l 'f2b_WORDPRESS'
-        </span><span class=input>
-        % param 'Wordpress' => $f2b_datas->{wordpress} unless param 'Wordpress';
-        %= select_field 'Wordpress' => [[(l 'DISABLED') => 'disabled'], [(l 'ENABLED') => 'enabled']], class => 'input'
-        </span></p>
-        <p>
-        %=l('f2b_SMANAGER_STATUS')
-        <br><span class=label>
-        %=l 'f2b_SMANAGER'
-        </span><span class=input>
-        % param 'Smanager' => $f2b_datas->{smanager} unless param 'Smanager';
-        %= select_field 'Smanager' => [[(l 'DISABLED') => 'disabled'], [(l 'ENABLED') => 'enabled']], class => 'input'
-        </span></p>
+		<fieldset id=generic_section>
+			<p>
+			%=l('f2b_SERVICE_STATUS')
+			<br><span class=label>
+			%=l 'f2b_STATUS'
+			</span><span class=input>
+			% param 'Status' => $f2b_datas->{status} unless param 'Status';
+			%= select_field 'Status' => [[(l 'DISABLED') => 'disabled'], [(l 'ENABLED') => 'enabled']], class => 'input'
+			</span></p>
+			<p>
+			%=l('f2b_FilterLocalNetworks_STATUS')
+			<br><span class=label>
+			%=l 'f2b_FilterLocalNetworks'
+			</span><span class=input>
+			% param 'FilterLocalNetworks' => $f2b_datas->{filterlocalnetworks} unless param 'FilterLocalNetworks';
+			%= select_field 'FilterLocalNetworks' => [[(l 'DISABLED') => 'disabled'], [(l 'ENABLED') => 'enabled']], class => 'input'
+			</span></p>
+			<p>
+			%=l('f2b_FilterValidRemoteHosts_STATUS')
+			<br><span class=label>
+			%=l 'f2b_FilterValidRemoteHosts'
+			</span><span class=input>
+			% param 'FilterValidRemoteHosts' => $f2b_datas->{filtervalidremotehosts} unless param 'FilterValidRemoteHosts';
+			%= select_field 'FilterValidRemoteHosts' => [[(l 'DISABLED') => 'disabled'], [(l 'ENABLED') => 'enabled']], class => 'input'
+			</span></p>
+			<p> 
+			%=l('f2b_SEND_MAIL_STATUS')
+			<br><span class=label>
+			%=l 'f2b_MAIL'
+			</span><span class=input>
+			% param 'Mail' => $f2b_datas->{mail} unless param 'Mail';
+			%= select_field 'Mail' => [[(l 'DISABLED') => 'disabled'], [(l 'ENABLED') => 'enabled']], class => 'input'
+			</span></p>
+		</fieldset>
+		<fieldset id=default_fieldset>
+			<p>
+			%=l 'f2b_BANTIME'
+			<br><span class=label>
+			%=l 'f2b_DEFAULT_BANTIME'
+			</span><span class=input>
+			% param 'BanTime' => $f2b_datas->{bantime} unless param 'BanTime';
+			%= text_field 'BanTime', size => '9', class => 'input'
+			</span></p>
+			<p>
+			%=l 'f2b_FINDTIME'
+			<br><span class=label>
+			%=l 'f2b_DEFAULT_FINDTIME'
+			</span><span class=input>
+			% param 'FindTime' => $f2b_datas->{findtime} unless param 'FindTime';
+			%= text_field 'FindTime', size => '6', class => 'input'
+			</span></p>
+			<p>
+			%=l 'f2b_MAXRETRY'
+			<br><span class=label>
+			%=l 'f2b_DEFAULT_MAXRETRY'
+			</span><span class=input>
+			% param 'MaxRetry' => $f2b_datas->{maxretry} unless param 'MaxRetry';
+			%= text_field 'MaxRetry', size => '2', class => 'input'
+			</span></p>
+        </fieldset>
+		<fieldset id=default_recidive_fieldset>
+			<p>
+			%=l 'f2b_recidive_BANTIME'
+			<br><span class=label>
+			%=l 'f2b_recidive_DEFAULT_BANTIME'
+			</span><span class=input>
+			% param 'RecidiveBanTime' => $f2b_datas->{recidivebantime} unless param 'RecidiveBanTime';
+			%= text_field 'RecidiveBanTime', size => '9', class => 'input'
+			</span></p>
+			<p>
+			%=l 'f2b_recidive_FINDTIME'
+			<br><span class=label>
+			%=l 'f2b_recidive_DEFAULT_FINDTIME'
+			</span><span class=input>
+			% param 'RecidiveFindTime' => $f2b_datas->{recidivefindtime} unless param 'RecidiveFindTime';
+			%= text_field 'RecidiveFindTime', size => '6', class => 'input'
+			</span></p>
+			<p>
+			%=l 'f2b_recidive_MAXRETRY'
+			<br><span class=label>
+			%=l 'f2b_recidive_DEFAULT_MAXRETRY'
+			</span><span class=input>
+			% param 'RecidiveMaxRetry' => $f2b_datas->{recidivemaxretry} unless param 'RecidiveMaxRetry';
+			%= text_field 'RecidiveMaxRetry', size => '2', class => 'input'
+			</span></p>
+        </fieldset>
+        <fieldset id=status_fieldset>
+			<p>
+			%=l('f2b_SSHD_STATUS')
+			<br><span class=label>
+			%=l 'f2b_SSHD'
+			</span><span class=input>
+			% param 'Sshd' => $f2b_datas->{sshd} unless param 'Sshd';
+			%= select_field 'Sshd' => [[(l 'DISABLED') => 'disabled'], [(l 'ENABLED') => 'enabled']], class => 'input'
+			</span></p><p>
+			%=l('f2b_QPSMTPD_STATUS')
+			<br><span class=label>
+			%=l 'f2b_QPSMTPD'
+			</span><span class=input>
+			% param 'Qpsmtpd' => $f2b_datas->{qpsmtpd} unless param 'Qpsmtpd';
+			%= select_field 'Qpsmtpd' => [[(l 'DISABLED') => 'disabled'], [(l 'ENABLED') => 'enabled']], class => 'input'
+			</span></p>
+			<p>
+			%=l('f2b_IMAP_STATUS')
+			<br><span class=label>
+			%=l 'f2b_IMAP'
+			</span><span class=input>
+			% param 'Dovecot' => $f2b_datas->{dovecot} unless param 'Dovecot';
+			%= select_field 'Dovecot' => [[(l 'DISABLED') => 'disabled'], [(l 'ENABLED') => 'enabled']], class => 'input'
+			</span></p>
+			<p>
+			%=l('f2b_HTTPD_STATUS')
+			<br><span class=label>
+			%=l 'f2b_HTTPD'
+			</span><span class=input>
+			% param 'Httpd-e-smith' => $f2b_datas->{'httpd-e-smith'} unless param 'Httpd-e-smith';
+			%= select_field 'Httpd-e-smith' => [[(l 'DISABLED') => 'disabled'], [(l 'ENABLED') => 'enabled']], class => 'input'
+			</span></p>
+			<p>
+			%=l('f2b_FTP_STATUS')
+			<br><span class=label>
+			%=l 'f2b_FTP'
+			</span><span class=input>
+			% param 'Ftp' => $f2b_datas->{ftp} unless param 'Ftp';
+			%= select_field 'Ftp' => [[(l 'DISABLED') => 'disabled'], [(l 'ENABLED') => 'enabled']], class => 'input'
+			</span></p>
+			<p>
+			%=l('f2b_LEMONLDAP_STATUS')
+			<br><span class=label>
+			%=l 'f2b_LEMONLDAP'
+			</span><span class=input>
+			% param 'Lemonldap' => $f2b_datas->{lemonldap} unless param 'Lemonldap';
+			%= select_field 'Lemonldap' => [[(l 'DISABLED') => 'disabled'], [(l 'ENABLED') => 'enabled']], class => 'input'
+			</span></p>
+			<p>
+			%=l('f2b_EJABBERD_STATUS')
+			<br><span class=label>
+			%=l 'f2b_EJABBERD'
+			</span><span class=input>
+			% param 'Ejabberd' => $f2b_datas->{ejabberd} unless param 'Ejabberd';
+			%= select_field 'Ejabberd' => [[(l 'DISABLED') => 'disabled'], [(l 'ENABLED') => 'enabled']], class => 'input'
+			</span></p>
+			<p>
+			%=l('f2b_SOGOD_STATUS')
+			<br><span class=label>
+			%=l 'f2b_SOGOD'
+			</span><span class=input>
+			% param 'Sogod' => $f2b_datas->{sogod} unless param 'Sogod';
+			%= select_field 'Sogod' => [[(l 'DISABLED') => 'disabled'], [(l 'ENABLED') => 'enabled']], class => 'input'
+			</span></p>
+			<p>
+			%=l('f2b_WORDPRESS_STATUS')
+			<br><span class=label>
+			%=l 'f2b_WORDPRESS'
+			</span><span class=input>
+			% param 'Wordpress' => $f2b_datas->{wordpress} unless param 'Wordpress';
+			%= select_field 'Wordpress' => [[(l 'DISABLED') => 'disabled'], [(l 'ENABLED') => 'enabled']], class => 'input'
+			</span></p>
+			<p>
+			%=l('f2b_SMANAGER_STATUS')
+			<br><span class=label>
+			%=l 'f2b_SMANAGER'
+			</span><span class=input>
+			% param 'Smanager' => $f2b_datas->{smanager} unless param 'Smanager';
+			%= select_field 'Smanager' => [[(l 'DISABLED') => 'disabled'], [(l 'ENABLED') => 'enabled']], class => 'input'
+			</span></p>
+        </fieldset>
 
         <div class='center'>
         %= submit_button $c->l('SAVE'), class => 'action'

@@ -31,12 +31,15 @@ my %defaultval=('FilterLocalNetworks'=> "enabled",
         "BanTime" => '1800',
         "FindTime" => '900',
         "MaxRetry" =>  '3',
+        "RecidiveBanTime" => '604800',
+        "RecidiveFindTime" => '86400',
+        "RecidiveMaxRetry" =>  '5',
         "sshd" => 'enabled',
         "qpsmtpd" => 'enabled',
         "dovecot" => 'enabled',
-	"httpd-e-smith" => 'enabled',
+		"httpd-e-smith" => 'enabled',
         "ftp" => 'enabled',
-	"lemonldap" => 'enabled',
+		"lemonldap" => 'enabled',
         "ejabberd"  => 'enabled',
         "sogod"  => 'disabled',
         "wordpress" => 'disabled',
@@ -60,13 +63,16 @@ sub main {
     $f2b_datas{'bantime'} = get_prop('fail2ban', 'BanTime');
     $f2b_datas{'findtime'} = get_prop('fail2ban', 'FindTime');
     $f2b_datas{'maxretry'} = get_prop('fail2ban', 'MaxRetry');
+    $f2b_datas{'recidivebantime'} = get_prop('fail2ban', 'RecidiveBanTime');
+    $f2b_datas{'recidivefindtime'} = get_prop('fail2ban', 'RecidiveFindTime');
+    $f2b_datas{'recidivemaxretry'} = get_prop('fail2ban', 'RecidiveMaxRetry');
     $f2b_datas{'wordpress'} = get_prop('fail2ban', 'wordpress');
 
     $f2b_datas{'sshd'} = get_prop('sshd', 'Fail2Ban');
     $f2b_datas{'qpsmtpd'} = get_prop('qpsmtpd', 'Fail2Ban');
     $f2b_datas{'dovecot'} = get_prop('dovecot', 'Fail2Ban');
     $f2b_datas{'httpd-e-smith'} = get_prop('httpd-e-smith', 'Fail2Ban');
-    $f2b_datas{'ftp'} = get_prop('sshd', 'Fail2Ban');
+    $f2b_datas{'ftp'} = get_prop('ftp', 'Fail2Ban');
     $f2b_datas{'lemonldap'} = get_prop('lemonldap', 'Fail2Ban');
     $f2b_datas{'ejabberd'} = get_prop('ejabberd', 'Fail2Ban');
     $f2b_datas{'sogod'} = get_prop('sogod', 'Fail2Ban');
@@ -99,7 +105,7 @@ sub do_action {
     $res = ip_number_or_blank( $c, $f2b_datas{ip} );
     $result .= $res . " <br>" if ( $res ne 'OK' );
 
-    $res = subnet_mask_bit( $c, $f2b_datas{bit} );
+    $res = subnet_mask_bit( $c, $f2b_datas{bits} );
     $result .= $res . " <br>" if ( $res ne 'OK' );
 
     $res = validate_network_and_mask( $c, $f2b_datas{ip}, $f2b_datas{bits} );
@@ -208,6 +214,9 @@ sub do_changes {
     my $BanTime= ($c->param ("BanTime") || '1800');
     my $FindTime= ($c->param ("FindTime") || '900');
     my $MaxRetry= ($c->param ("MaxRetry") ||  '3');
+    my $RecidiveBanTime= ($c->param ("RecidiveBanTime") || '604800');
+    my $RecidiveFindTime= ($c->param ("RecidiveFindTime") || '86400');
+    my $RecidiveMaxRetry= ($c->param ("RecidiveMaxRetry") ||  '5');
 
     # those are stored in a different key dedicated to the service
     my %services;
@@ -245,6 +254,13 @@ sub do_changes {
     	    unless ( ! $cdb->get_prop('fail2ban','FindTime') && $FindTime eq $defaultval{'FindTime'}  );
         $rec->set_prop('MaxRetry', $MaxRetry) 
     	    unless ( ! $cdb->get_prop('fail2ban','MaxRetry') && $MaxRetry eq $defaultval{'MaxRetry'}  );
+	$rec->set_prop('RecidiveBanTime', $RecidiveBanTime) 
+	    unless ( ! $cdb->get_prop('fail2ban','RecidiveBanTime') && $RecidiveBanTime eq $defaultval{'RecidiveBanTime'}  );
+        $rec->set_prop('RecidiveFindTime', $RecidiveFindTime) 
+    	    unless ( ! $cdb->get_prop('fail2ban','RecidiveFindTime') && $RecidiveFindTime eq $defaultval{'RecidiveFindTime'}  );
+        $rec->set_prop('RecidiveMaxRetry', $RecidiveMaxRetry) 
+    	    unless ( ! $cdb->get_prop('fail2ban','RecidiveMaxRetry') && $RecidiveMaxRetry eq $defaultval{'RecidiveMaxRetry'}  );
+
     }
     # for the 9 services update unless key does not exist and property does not exist and value eq default
     foreach my $key (keys %services) {
@@ -274,6 +290,7 @@ sub do_changes {
     }
 
 	$cdb = esmith::ConfigDB::UTF8->open() or die "Couldn't open ConfigDB::UTF8\n";
+	$rec = $cdb->get('fail2ban');
     if ( $rec->prop('status') eq 'disabled' ) {
         unless ( `/etc/init.d/fail2ban stop`  ) {
 	    return $c->l('f2b_ERROR_STOPPING');

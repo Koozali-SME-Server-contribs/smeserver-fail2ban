@@ -57,3 +57,31 @@
 .f2b-actions {
   margin-top: 0.85rem;
 }
+
+/* --- Config sections: give each of the three a distinct card look --- */
+.f2b-tabpanel section {
+  padding: 0.6rem 0.8rem;
+  margin-bottom: 0.7rem;
+  border-radius: 6px;
+  border-left: 4px solid transparent;
+}
+
+#generic_section {
+  background: #f0f6fc;
+  border-left-color: #2f6fb2;   /* blue */
+}
+
+#default_section {
+  background: #f6f3ec;
+  border-left-color: #b2872f;   /* amber */
+}
+
+#status_section {
+  background: #f1f5ee;
+  border-left-color: #4c8a3c;   /* green */
+}
+
+/* Slight divider/heading cue so the last section doesn't run into the save row */
+#status_section {
+  margin-bottom: 0;
+}
