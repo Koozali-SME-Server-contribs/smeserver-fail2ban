@@ -1,7 +1,7 @@
-<div id="f2b_valid">
-    <h2>
+<fieldset id="f2b_valid">
+    <legend>
     %=l 'f2b_VALIDFROM_TITLE'
-    </h2><p>
+    </legend><p>
     %=l 'f2b_VALIDFROM_DESC'
     </p>
     %	my @valids = @{$c->get_valid_from()};
@@ -32,4 +32,4 @@
         %=l 'f2b_NO_ENTRIES_YET';
         </b>
     %	}
-</div>
+</fieldset>

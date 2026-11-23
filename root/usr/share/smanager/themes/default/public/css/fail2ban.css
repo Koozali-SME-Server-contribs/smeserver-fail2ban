@@ -58,30 +58,24 @@
   margin-top: 0.85rem;
 }
 
-/* --- Config sections: give each of the three a distinct card look --- */
-.f2b-tabpanel section {
-  padding: 0.6rem 0.8rem;
-  margin-bottom: 0.7rem;
+/* --- Config sections: thin outline + legend cut into the top-left edge --- */
+.f2b-tabpanel fieldset {
+  border: 1px solid #b9bcc2;
   border-radius: 6px;
-  border-left: 4px solid transparent;
+  padding: 0.75rem 0.85rem;
+  margin-bottom: 0.9rem;
+  background: #fff;
 }
 
-#generic_section {
-  background: #f0f6fc;
-  border-left-color: #2f6fb2;   /* blue */
+.f2b-tabpanel fieldset legend {
+  padding: 0 0.45rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #444;
+  background: #fff;   /* punches through the outline to form the legend cut */
 }
 
-#default_section {
-  background: #f6f3ec;
-  border-left-color: #b2872f;   /* amber */
-}
-
-#status_section {
-  background: #f1f5ee;
-  border-left-color: #4c8a3c;   /* green */
-}
-
-/* Slight divider/heading cue so the last section doesn't run into the save row */
-#status_section {
+/* last section sits neatly before the save row */
+.f2b-tabpanel fieldset:last-of-type {
   margin-bottom: 0;
 }

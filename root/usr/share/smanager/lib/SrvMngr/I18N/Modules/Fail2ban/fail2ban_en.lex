@@ -57,3 +57,15 @@
 'f2b_ERR_EXISTS' => 'Error: IP already in whitelist',
 'f2b_SEND_MAIL_STATUS' => 'Send mail on ban',
 'f2b_EMAIL' => 'Alert Email',
+
+'f2b_GENERAL' => 'General',
+'f2b_DEFAULT_TITLE' => 'Default',
+'f2b_RECIDIVE_TITLE' => 'Recidive',
+'f2b_SERVICE_STATUS_TITLE' => 'Service status',
+'f2b_ADD_TITLE' => 'Add',
+'f2b_recidive_BANTIME' => 'Set the default ban time for the recidive jail (Initial default is 604800 seconds).',
+'f2b_recidive_FINDTIME' => 'Set the default find time for the recidive jail (Initial default is 86400 seconds).',
+'f2b_recidive_MAXRETRY' => 'Set the default max retry allowed before being ban by the recidive jail (Initial default is 5).',
+
+'f2b_TAB_HOSTS' => 'Hosts',
+'f2b_TAB_CONFIG' => 'Configuration',

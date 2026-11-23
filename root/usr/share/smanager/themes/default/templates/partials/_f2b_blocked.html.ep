@@ -1,7 +1,7 @@
-<div id="f2b_blocked">
-    <h2>
+<fieldset id="f2b_blocked">
+    <legend>
     %=l 'f2b_CURRENT_DENY_TITLE'
-    </h2><p>
+    </legend><p>
     %=l 'f2b_CURRENT_DENY_DESC'
     </p>
 
@@ -44,4 +44,4 @@
         %=l 'f2b_NO_ENTRIES_YET';
         </b>
     %	}
-</div>
+</fieldset>

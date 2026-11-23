@@ -28,7 +28,7 @@
               aria-selected="true"
               aria-controls="f2b-tabpanel-hosts"
               data-mode="hosts"
-              id="f2b-tab-hosts">Hosts</button>
+              id="f2b-tab-hosts"><%=l 'f2b_TAB_HOSTS' %></button>
 
       <button type="button"
               class="f2b-tab"
@@ -36,7 +36,7 @@
               aria-selected="false"
               aria-controls="f2b-tabpanel-config"
               data-mode="config"
-              id="f2b-tab-config">Configuration</button>
+              id="f2b-tab-config"><%=l 'f2b_TAB_CONFIG' %></button>
     </div>
 
     <div class="f2b-tabpanels">
@@ -47,6 +47,9 @@
                aria-labelledby="f2b-tab-hosts">
 
         %= include 'partials/_f2b_valid'
+
+        <fieldset id="f2b-add">
+          <legend><%=l 'f2b_ADD_TITLE' %></legend>
 
         <p>
         %=l('f2b_DESC_ADD_IP')
@@ -68,6 +71,7 @@
         <div class='center'>
         %= submit_button $c->l('SAVE'), class => 'action'
         </div>
+        </fieldset>
 
         %= include 'partials/_f2b_blocked'
       </section>
@@ -78,6 +82,7 @@
                aria-labelledby="f2b-tab-config">
 
 		<fieldset id=generic_section>
+			<legend><%=l 'f2b_GENERAL' %></legend>
 			<p>
 			%=l('f2b_SERVICE_STATUS')
 			<br><span class=label>
@@ -112,6 +117,7 @@
 			</span></p>
 		</fieldset>
 		<fieldset id=default_fieldset>
+			<legend><%=l 'f2b_DEFAULT_TITLE' %></legend>
 			<p>
 			%=l 'f2b_BANTIME'
 			<br><span class=label>
@@ -138,10 +144,11 @@
 			</span></p>
         </fieldset>
 		<fieldset id=default_recidive_fieldset>
+			<legend><%=l 'f2b_RECIDIVE_TITLE' %></legend>
 			<p>
 			%=l 'f2b_recidive_BANTIME'
 			<br><span class=label>
-			%=l 'f2b_recidive_DEFAULT_BANTIME'
+			%=l 'f2b_DEFAULT_BANTIME'
 			</span><span class=input>
 			% param 'RecidiveBanTime' => $f2b_datas->{recidivebantime} unless param 'RecidiveBanTime';
 			%= text_field 'RecidiveBanTime', size => '9', class => 'input'
@@ -149,7 +156,7 @@
 			<p>
 			%=l 'f2b_recidive_FINDTIME'
 			<br><span class=label>
-			%=l 'f2b_recidive_DEFAULT_FINDTIME'
+			%=l 'f2b_DEFAULT_FINDTIME'
 			</span><span class=input>
 			% param 'RecidiveFindTime' => $f2b_datas->{recidivefindtime} unless param 'RecidiveFindTime';
 			%= text_field 'RecidiveFindTime', size => '6', class => 'input'
@@ -157,13 +164,14 @@
 			<p>
 			%=l 'f2b_recidive_MAXRETRY'
 			<br><span class=label>
-			%=l 'f2b_recidive_DEFAULT_MAXRETRY'
+			%=l 'f2b_DEFAULT_MAXRETRY'
 			</span><span class=input>
 			% param 'RecidiveMaxRetry' => $f2b_datas->{recidivemaxretry} unless param 'RecidiveMaxRetry';
 			%= text_field 'RecidiveMaxRetry', size => '2', class => 'input'
 			</span></p>
         </fieldset>
         <fieldset id=status_fieldset>
+			<legend><%=l 'f2b_SERVICE_STATUS_TITLE' %></legend>
 			<p>
 			%=l('f2b_SSHD_STATUS')
 			<br><span class=label>
