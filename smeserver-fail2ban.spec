@@ -1,5 +1,5 @@
 %define version 0.1.18
-%define release 47
+%define release 48
 %define name smeserver-fail2ban
 
 Summary: fail2ban integration on SME Server
@@ -25,6 +25,13 @@ AutoReqProv: no
 Configure fail2ban on SME Server
 
 %changelog
+* Fri Nov 20 2026 Brian Read <brianr@koozali.org> 0.1.18-48.sme
+- Add configurable Recidive jail settings (ban time, find time, max retry) [SME: 13348]
+- Reorganize Config panel into sections with visual styling [SME: 13348]
+- Fix FTP service status reading wrong property (sshd instead of ftp) [SME: 13348]
+- Fix subnet mask variable name when validating network entries [SME: 13348]
+- Remove panel_link call in createlinks [SME: 13348]
+
 * Thu Nov 19 2026 Jean-Philippe Pialasse <jpp@koozali.org> 0.1.18-47.sme
 - fix pid path [SME: 13845]
 - fix db purge time [SME: 13846]

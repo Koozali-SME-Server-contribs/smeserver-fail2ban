@@ -69,3 +69,7 @@
 
 'f2b_TAB_HOSTS' => 'Hosts',
 'f2b_TAB_CONFIG' => 'Configuration',
+
+# --- keys below auto-added by lex-to-po.pl: found via l()/maketext() in
+# controller/templates but missing from this file. Please verify wording. ---
+'WHITELIST' => 'WHITELIST',  # AUTO-ADDED, needs review -- found at _f2b_blocked.html.ep:33

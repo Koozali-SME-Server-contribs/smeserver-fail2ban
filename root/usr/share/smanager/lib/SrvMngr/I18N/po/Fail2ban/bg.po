@@ -1,0 +1,218 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: smeserver-manager Fail2ban module\n"
+"POT-Creation-Date: 2026-11-23 14:54+0000\n"
+"PO-Revision-Date: 2026-11-23 14:54+0000\n"
+"Last-Translator: unassigned\n"
+"Language-Team: unassigned\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: bg\n"
+
+msgid "WHITELIST"
+msgstr "(en) WHITELIST"
+
+msgid "f2b_ADD_BITS"
+msgstr "Оторизирана подмрежа"
+
+msgid "f2b_ADD_IP"
+msgstr "Оторизирана мрежа"
+
+msgid "f2b_ADD_TITLE"
+msgstr "Добави"
+
+msgid "f2b_BANTIME"
+msgstr "Задайте стандартното време забрана за затворите (първоначално стандарта е 1800 секунди)."
+
+msgid "f2b_CURRENT_DENY_DESC"
+msgstr "Това е списък на хостове, които са блокирани в момента."
+
+msgid "f2b_CURRENT_DENY_TITLE"
+msgstr "Блокирани хостове"
+
+msgid "f2b_DEFAULT_BANTIME"
+msgstr "Време за забрана"
+
+msgid "f2b_DEFAULT_FINDTIME"
+msgstr "Време за откриване"
+
+msgid "f2b_DEFAULT_MAXRETRY"
+msgstr "Макс. опити"
+
+msgid "f2b_DEFAULT_TITLE"
+msgstr "По подразбиране"
+
+msgid "f2b_DESC_ADD_BITS"
+msgstr "За да добавите нова позволена мрежа въведете съответната маска на подмрежа като битове, напр. 22, 25 или 32."
+
+msgid "f2b_DESC_ADD_IP"
+msgstr "За да добавите нова позволена мрежа въведете информацията по-долу."
+
+msgid "f2b_EJABBERD"
+msgstr "ejabberd"
+
+msgid "f2b_EJABBERD_STATUS"
+msgstr "Състояние на затвора на ejabberd, ако е инсталиран. Нищо няма да се стартира ако ejabberd не е инсталиран или изключен."
+
+msgid "f2b_EMAIL"
+msgstr "Изтриване на писмо"
+
+msgid "f2b_ERROR_STOPPING"
+msgstr "Грешка при опит за спиране на услугата"
+
+msgid "f2b_ERROR_UPDATING"
+msgstr "Не мога да махна забраната"
+
+msgid "f2b_ERROR_UPDATING_WHITE"
+msgstr "Не мога да махна забраната и да сложа в белия списък"
+
+msgid "f2b_ERR_EXISTS"
+msgstr "Error: IP already in whitelist"
+
+msgid "f2b_ERR_INVALID_PARAMS"
+msgstr "Невалидни мрежови параметри"
+
+msgid "f2b_ERR_NO_RECORD"
+msgstr "Не мога да открия записът на fail2ban в БД за конфигурация"
+
+msgid "f2b_FINDTIME"
+msgstr ">Задайте стандартното време за откриване за затворите първоначално стандарта е 900 секунди)."
+
+msgid "f2b_FIRST_SEEN"
+msgstr "Хост видян за пръв път"
+
+msgid "f2b_FORM_TITLE"
+msgstr "Услуга Fail2ban"
+
+msgid "f2b_FTP"
+msgstr "proftpd"
+
+msgid "f2b_FTP_STATUS"
+msgstr "Състояние на затвора на proftpd."
+
+msgid "f2b_FilterLocalNetworks"
+msgstr "Статус на FilterLocalNetworks"
+
+msgid "f2b_FilterLocalNetworks_STATUS"
+msgstr "Сложи в бял списък всички дефинирани локални мрежи."
+
+msgid "f2b_FilterValidRemoteHosts"
+msgstr "Състояние на FilterValidRemoteHosts"
+
+msgid "f2b_FilterValidRemoteHosts_STATUS"
+msgstr "Поставяне в белия списък на всички оторизирани отдалечени хостове, на които е позволено да достъпват server-manager."
+
+msgid "f2b_GENERAL"
+msgstr "Общи"
+
+msgid "f2b_HTTPD"
+msgstr "httpd"
+
+msgid "f2b_HTTPD_STATUS"
+msgstr "Състояние на затвора на httpd. Няколко възможности за включени тук едновремено."
+
+msgid "f2b_IMAP"
+msgstr "dovecot"
+
+msgid "f2b_IMAP_STATUS"
+msgstr "Състояние на затвора на dovecot (imap услугата за изтегляне на поща)."
+
+msgid "f2b_INVALID_SUBNET_MASK"
+msgstr "Невалидна мрежова маска"
+
+msgid "f2b_JAIL"
+msgstr "Затворница"
+
+msgid "f2b_LEMONLDAP"
+msgstr "LemonLDAP"
+
+msgid "f2b_LEMONLDAP_STATUS"
+msgstr "Състояние на затвора на LemonLDAP, ако е инсталиран. Нищо не се изпълнява ако LemonLDAP не е инсталиран или е изключен."
+
+msgid "f2b_MAIL"
+msgstr "Поща"
+
+msgid "f2b_MAXRETRY"
+msgstr "Задайте стандартния максимален брой опити преди поставяне на забрана (първоначално стандарта е 3)."
+
+msgid "f2b_NO_ENTRIES_YET"
+msgstr "Няма елементи"
+
+msgid "f2b_QPSMTPD"
+msgstr "qpsmtpd"
+
+msgid "f2b_QPSMTPD_STATUS"
+msgstr "Състояние на затвора на qpsmtpd (входяща поща)."
+
+msgid "f2b_RECIDIVE_TITLE"
+msgstr "Рецидив"
+
+msgid "f2b_SEND_MAIL_STATUS"
+msgstr "Send mail on ban"
+
+msgid "f2b_SERVICE_STATUS"
+msgstr "Състояние на услугата на Fail2ban."
+
+msgid "f2b_SERVICE_STATUS_TITLE"
+msgstr "Състояние на услугата"
+
+msgid "f2b_SMANAGER"
+msgstr "Smanager"
+
+msgid "f2b_SMANAGER_STATUS"
+msgstr "Състояние на smanager затворниците. Трябва да ги активирате ръчно, ако ги инсталирате след fail2ban."
+
+msgid "f2b_SOGOD"
+msgstr "SOGO"
+
+msgid "f2b_SOGOD_STATUS"
+msgstr "Състояние на затвора на SOGO, ако е инсталиран. Нищо няма да се стартира ако SOGO не е инсталиран или изключен."
+
+msgid "f2b_SSHD"
+msgstr "sshd"
+
+msgid "f2b_SSHD_STATUS"
+msgstr "Състояние на sshd затвор."
+
+msgid "f2b_STATUS"
+msgstr "Състояние"
+
+msgid "f2b_SUCCESS"
+msgstr "Новите настройки на fail2ban бяха записани."
+
+msgid "f2b_SUCCESS_IP"
+msgstr "Беше махната забраната за този IP адрес"
+
+msgid "f2b_SUCCESS_IP_WHITE"
+msgstr "Беше махната забраната за този IP адрес и бе поставен бели списък"
+
+msgid "f2b_TAB_CONFIG"
+msgstr "Конфигурация"
+
+msgid "f2b_TAB_HOSTS"
+msgstr "Хостове"
+
+msgid "f2b_VALIDFROM_DESC"
+msgstr "Това е списък от хостове, които няма да бъдат блокирани от fail2ban."
+
+msgid "f2b_VALIDFROM_TITLE"
+msgstr "Позволени хостове"
+
+msgid "f2b_WHITELIST"
+msgstr "Бял списък"
+
+msgid "f2b_WORDPRESS"
+msgstr "wordpress"
+
+msgid "f2b_WORDPRESS_STATUS"
+msgstr "Статус на затворите на wordpress. Трябва да ги активирате ръчно, ако имате такива в инфо слот или като добавка на сървъра. Също, моля инсталирайте и добавките на всичките му инсталации."
+
+msgid "f2b_recidive_BANTIME"
+msgstr "Задайте време за забрана за рецидивната затворница (първоначално по подразбиране е 604800 секунди)."
+
+msgid "f2b_recidive_FINDTIME"
+msgstr "Задайте време за откриване за рецидивната затворница (първоначално по подразбиране е 86400 секунди)."
+
+msgid "f2b_recidive_MAXRETRY"
+msgstr "Задайте максимален брой опити преди забрана за рецидивната затворница (първоначално по подразбиране е 5)."

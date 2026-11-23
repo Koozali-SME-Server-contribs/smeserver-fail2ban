@@ -1,0 +1,218 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: smeserver-manager Fail2ban module\n"
+"POT-Creation-Date: 2026-11-23 14:54+0000\n"
+"PO-Revision-Date: 2026-11-23 14:54+0000\n"
+"Last-Translator: unassigned\n"
+"Language-Team: unassigned\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: it\n"
+
+msgid "WHITELIST"
+msgstr "(en) WHITELIST"
+
+msgid "f2b_ADD_BITS"
+msgstr "Subnet di rete autorizzate."
+
+msgid "f2b_ADD_IP"
+msgstr "Rete autorizzata"
+
+msgid "f2b_ADD_TITLE"
+msgstr "Aggiungi"
+
+msgid "f2b_BANTIME"
+msgstr "Impostare il periodo di ban per jails (il default iniziale è 1800 secondi)."
+
+msgid "f2b_CURRENT_DENY_DESC"
+msgstr "Questa è la lista degli host correntemente bloccati."
+
+msgid "f2b_CURRENT_DENY_TITLE"
+msgstr "Host bloccati"
+
+msgid "f2b_DEFAULT_BANTIME"
+msgstr "Bantime"
+
+msgid "f2b_DEFAULT_FINDTIME"
+msgstr "Findtime"
+
+msgid "f2b_DEFAULT_MAXRETRY"
+msgstr "Maxretry"
+
+msgid "f2b_DEFAULT_TITLE"
+msgstr "Predefinito"
+
+msgid "f2b_DESC_ADD_BITS"
+msgstr "Per aggiungere una nuova rete autorizzata, inserire la subnet associata usando i bits (p.e. 22, 25 or 32)."
+
+msgid "f2b_DESC_ADD_IP"
+msgstr "Per aggiungere una nuova rete consentita, inserire i dettagli sotto."
+
+msgid "f2b_EJABBERD"
+msgstr "ejabberd"
+
+msgid "f2b_EJABBERD_STATUS"
+msgstr "Stato di ejabberd jail, se installato. Nulla è attivo se ejabberd non è installato o è disabilitato."
+
+msgid "f2b_EMAIL"
+msgstr "Mail di allerta"
+
+msgid "f2b_ERROR_STOPPING"
+msgstr "Errore durante l'arresto del servizio"
+
+msgid "f2b_ERROR_UPDATING"
+msgstr "Impossibile rimuovere dalla banlist"
+
+msgid "f2b_ERROR_UPDATING_WHITE"
+msgstr "Impossibile rimuovere dalla banlist ed inserire nella whitelist"
+
+msgid "f2b_ERR_EXISTS"
+msgstr "Errore: indirizzo IP già in whitelist"
+
+msgid "f2b_ERR_INVALID_PARAMS"
+msgstr "Parametri di rete non validi"
+
+msgid "f2b_ERR_NO_RECORD"
+msgstr "Impossibile trovare il record fail2ban nel db di configurazione"
+
+msgid "f2b_FINDTIME"
+msgstr "Imposta il periodo di find per jails (il default iniziale è 900 seconds)."
+
+msgid "f2b_FIRST_SEEN"
+msgstr "Primo host individuato"
+
+msgid "f2b_FORM_TITLE"
+msgstr "Servizio Fail2ban"
+
+msgid "f2b_FTP"
+msgstr "proftpd"
+
+msgid "f2b_FTP_STATUS"
+msgstr "Stato di proftpd jail."
+
+msgid "f2b_FilterLocalNetworks"
+msgstr "Stato di FilterLocalNetworks"
+
+msgid "f2b_FilterLocalNetworks_STATUS"
+msgstr "Mette in whitelist tutte le reti locali."
+
+msgid "f2b_FilterValidRemoteHosts"
+msgstr "Stato FilterValidRemoteHosts"
+
+msgid "f2b_FilterValidRemoteHosts_STATUS"
+msgstr "Inserire in whitelist tutti gli host remoti autorizzati ad accedere al server-manager."
+
+msgid "f2b_GENERAL"
+msgstr "Generale"
+
+msgid "f2b_HTTPD"
+msgstr "httpd"
+
+msgid "f2b_HTTPD_STATUS"
+msgstr "Stato di httpd jails. Molte caratteristiche per volta vengono abilitate."
+
+msgid "f2b_IMAP"
+msgstr "dovecot"
+
+msgid "f2b_IMAP_STATUS"
+msgstr "Stato di dovecot jail (servizio imap per caricamento messaggi)."
+
+msgid "f2b_INVALID_SUBNET_MASK"
+msgstr "Maschera di sottorete non valida"
+
+msgid "f2b_JAIL"
+msgstr "Jail"
+
+msgid "f2b_LEMONLDAP"
+msgstr "LemonLDAP "
+
+msgid "f2b_LEMONLDAP_STATUS"
+msgstr "Stato di jail LemonLDAP, se installato. Nulla è attivo se LemonLDAP non è installato o è disabilitato."
+
+msgid "f2b_MAIL"
+msgstr "Email"
+
+msgid "f2b_MAXRETRY"
+msgstr "Impostare il valore di \"default max retry\" consentito prima del ban (Il default is 3)."
+
+msgid "f2b_NO_ENTRIES_YET"
+msgstr "Nessun elemento inserito"
+
+msgid "f2b_QPSMTPD"
+msgstr "qpsmtpd"
+
+msgid "f2b_QPSMTPD_STATUS"
+msgstr "Stato di qpsmtpd jail (messaggi in ingresso)."
+
+msgid "f2b_RECIDIVE_TITLE"
+msgstr "Recidiva"
+
+msgid "f2b_SEND_MAIL_STATUS"
+msgstr "Invia la posta in ban"
+
+msgid "f2b_SERVICE_STATUS"
+msgstr "Stato del servizio fail2ban "
+
+msgid "f2b_SERVICE_STATUS_TITLE"
+msgstr "Stato del servizio"
+
+msgid "f2b_SMANAGER"
+msgstr "Smanager"
+
+msgid "f2b_SMANAGER_STATUS"
+msgstr "Stato delle jail smanager. Devi attivarlo manualmente se lo installi dopo fail2ban."
+
+msgid "f2b_SOGOD"
+msgstr "SOGO"
+
+msgid "f2b_SOGOD_STATUS"
+msgstr "Stato di SOGO jail se installato. Nulla è attivo se SOGO non è installato o è disabilitato."
+
+msgid "f2b_SSHD"
+msgstr "sshd"
+
+msgid "f2b_SSHD_STATUS"
+msgstr "Stato di sshd jail."
+
+msgid "f2b_STATUS"
+msgstr "Stato"
+
+msgid "f2b_SUCCESS"
+msgstr "Le nuove impostazione fail2ban sono state salvate."
+
+msgid "f2b_SUCCESS_IP"
+msgstr "L'indirizzo IP è stato rimosso dalla ban-list"
+
+msgid "f2b_SUCCESS_IP_WHITE"
+msgstr "L'indirizzo IP è stato rimosso dalla ban-list ed inserito in white-list"
+
+msgid "f2b_TAB_CONFIG"
+msgstr "Configurazione"
+
+msgid "f2b_TAB_HOSTS"
+msgstr "Ospiti"
+
+msgid "f2b_VALIDFROM_DESC"
+msgstr "Questa è una lista di host che non saranno bloccati da fail2ban."
+
+msgid "f2b_VALIDFROM_TITLE"
+msgstr "Host consentit"
+
+msgid "f2b_WHITELIST"
+msgstr "Lista bianca"
+
+msgid "f2b_WORDPRESS"
+msgstr "wordpress"
+
+msgid "f2b_WORDPRESS_STATUS"
+msgstr "Stato di wordpress jails. E' necessario attivarlo manualmente sia che lo si abbia in una I-bay o che si usi il contrib. Installare inoltre il plugin in tutte le istanze attive di wordpress."
+
+msgid "f2b_recidive_BANTIME"
+msgstr "Impostare il periodo di ban per la jail recidiva (il default iniziale è 604800 secondi)."
+
+msgid "f2b_recidive_FINDTIME"
+msgstr "Impostare il periodo di ricerca per la jail recidiva (il default iniziale è 86400 secondi)."
+
+msgid "f2b_recidive_MAXRETRY"
+msgstr "Impostare il numero massimo di tentativi prima del ban per la jail recidiva (il default iniziale è 5)."
