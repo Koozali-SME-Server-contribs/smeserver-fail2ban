@@ -1,5 +1,5 @@
 %define version 0.1.18
-%define release 48
+%define release 49
 %define name smeserver-fail2ban
 
 Summary: fail2ban integration on SME Server
@@ -14,6 +14,7 @@ Source: %{name}-%{version}.tar.xz
 BuildRoot: /var/tmp/%{name}-%{version}-%{release}-buildroot
 BuildArchitectures: noarch
 BuildRequires: smeserver-devtools
+BuildRequires: gettext
 
 Requires: smeserver-base >= 5.2.0
 Requires: fail2ban-server, fail2ban-sendmail
@@ -25,6 +26,9 @@ AutoReqProv: no
 Configure fail2ban on SME Server
 
 %changelog
+* Thu Nov 26 2026 Brian Read <brianr@koozali.org> 0.1.18-49.sme
+- Add code in spec to generate mo files from po files [SME: 13867]
+
 * Fri Nov 20 2026 Brian Read <brianr@koozali.org> 0.1.18-48.sme
 - Add configurable Recidive jail settings (ban time, find time, max retry) [SME: 13348]
 - Reorganize Config panel into sections with visual styling [SME: 13348]
@@ -254,6 +258,25 @@ Configure fail2ban on SME Server
 %build
 %{__mkdir_p} root/var/log/fail2ban
 perl createlinks
+# And compile the po files for easy interpretation by I18N in server manager
+for potfile in root/usr/share/smanager/lib/SrvMngr/I18N/po/*/*.pot;
+do
+    #echo "potfile:"$potfile
+    moddir=$(dirname "$potfile")
+    module=$(basename "$potfile" .pot)
+	moduleLC=$(echo "$module" | tr 'A-Z' 'a-z')
+    #echo "moddir:"$moddir" module:"$module" moduleLC:"$moduleLC
+    for pofile in $moddir/*.po; do
+        [ -e "$pofile" ] || continue
+        echo "pofile:"${pofile}
+        lang=$(basename "$pofile" .po)
+        #echo "lang:"$lang
+        install -d "${moddir}/${lang}/LC_MESSAGES"
+        #mkdir -p "${moddir}/${lang}/LC_MESSAGES"
+        msgfmt --check -o "${moddir}/${lang}/LC_MESSAGES/${moduleLC}.mo" "$pofile"
+        echo "module:"$(find "${moddir}/${lang}" -name '*.mo')
+    done
+done
 
 %install
 /bin/rm -rf $RPM_BUILD_ROOT
